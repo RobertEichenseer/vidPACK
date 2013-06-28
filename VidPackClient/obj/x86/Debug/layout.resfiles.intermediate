@@ -7,4 +7,5 @@ Assets\StoreLogo.png
 App.xaml
 Common\StandardStyles.xaml
 View\Hub.xaml
+View\SessionDetail.xaml
 Common\ReadMe.txt

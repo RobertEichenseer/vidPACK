@@ -131,6 +131,9 @@
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\Hub.xaml">
       <PackagePath>View\Hub.xaml</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\SessionDetail.xaml">
+      <PackagePath>View\SessionDetail.xaml</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>

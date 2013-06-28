@@ -114,10 +114,15 @@
     <Compile Include="Converter\StringToUriConverter.cs" />
     <Compile Include="Converter\DateTimeConverter.cs" />
     <Compile Include="ViewModel\HubViewModel.cs" />
+    <Compile Include="ViewModel\SessionDetailInputPara.cs" />
+    <Compile Include="ViewModel\SessionDetailViewModel.cs" />
     <Compile Include="View\Hub.xaml.cs">
       <DependentUpon>Hub.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\SessionDetail.xaml.cs">
+      <DependentUpon>SessionDetail.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -145,6 +150,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Hub.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SessionDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

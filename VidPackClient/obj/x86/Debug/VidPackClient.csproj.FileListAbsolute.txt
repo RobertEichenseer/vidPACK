@@ -98,3 +98,6 @@ C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\resources.resfiles
 C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\pri.resfiles
 C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\LanguageQualifiers.txt
 C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\ProjectArchitectures.txt
+C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\SessionDetail.g.i.cs
+C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\SessionDetail.g.cs
+C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\SessionDetail.xaml

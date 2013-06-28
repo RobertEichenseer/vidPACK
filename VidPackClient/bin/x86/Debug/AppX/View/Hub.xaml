@@ -20,6 +20,7 @@
         <localVM:HubViewModel x:Key="viewModel" />
         <localConverter:DateTimeConverter x:Key="dateTimeConverter" />
         <localConverter:UriConverter x:Key="uriConverter" />
+
         
         <DataTemplate x:Key="DataTemplateSession">
             <Grid Width="590">
@@ -66,7 +67,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:ConnectionId='2' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+            <Button x:ConnectionId='3' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
         <!-- /Header -->
@@ -135,7 +136,7 @@
                     <Frame Width="600" Margin="20,20,20,40">
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="Past Sessions" Style="{StaticResource GroupHeaderTextStyle}" Margin="10" />
-                            <GridView ItemsSource="{Binding Path=Sessions}" ItemTemplate="{StaticResource DataTemplateSession}" />
+                            <GridView x:ConnectionId='2' ItemsSource="{Binding Path=Sessions}" ItemTemplate="{StaticResource DataTemplateSession}"                                                 />
                         </StackPanel>
                     </Frame>
                     <!-- /Past Sessions -->

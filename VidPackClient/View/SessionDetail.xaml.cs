@@ -2,11 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using VidPackClient.Bl;
-using VidPackClient.BL;
-using VidPackClient.View;
-using VidPackClient.ViewModel;
-using VidPackModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -16,25 +11,19 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
- 
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
-namespace VidPackClient
+namespace VidPackClient.View
 {
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class Hub : VidPackClient.Common.LayoutAwarePage
+    public sealed partial class SessionDetail : VidPackClient.Common.LayoutAwarePage
     {
-
-        HubViewModel _viewModel = new HubViewModel(new CommonBl_RestWebService()); 
-
-        public Hub()
+        public SessionDetail()
         {
-            
             this.InitializeComponent();
-            grdMain.DataContext = _viewModel;
         }
 
         /// <summary>
@@ -58,24 +47,6 @@ namespace VidPackClient
         /// <param name="pageState">An empty dictionary to be populated with serializable state.</param>
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
-        }
-
-        private void pageRoot_Loaded(object sender, RoutedEventArgs e)
-        {
-            //ListBox Sizing
-            //lbDownloads.Height= grdContent.ActualHeight - 160;
-
-            _viewModel.LoadHubContent();
-            
-        }
-
-        private void PastSession_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (e.AddedItems.Count == 0)
-                return;
-
-            Session selectedSession = (Session)e.AddedItems[0];
-            Frame.Navigate(typeof(SessionDetail), new SessionDetailInputPara() { SelectedSession = selectedSession }); 
         }
     }
 }

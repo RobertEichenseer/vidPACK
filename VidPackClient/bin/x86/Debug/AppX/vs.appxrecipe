@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-06-28T10:32:45.025</Modified>
+      <Modified>2013-06-28T15:25:07.163</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.exe">
       <PackagePath>VidPackClient.exe</PackagePath>
-      <Modified>2013-06-28T14:04:06.180</Modified>
+      <Modified>2013-06-28T15:25:06.166</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.pdb">
       <PackagePath>VidPackClient.pdb</PackagePath>
-      <Modified>2013-06-28T14:04:06.158</Modified>
+      <Modified>2013-06-28T15:25:06.142</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\References\CommonConfiguration\x86\Microsoft.AdaptiveStreaming.Analytics.winmd">
       <PackagePath>Microsoft.AdaptiveStreaming.Analytics.winmd</PackagePath>
@@ -174,11 +174,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\Hub.xaml">
       <PackagePath>View\Hub.xaml</PackagePath>
-      <Modified>2013-06-28T12:12:44.768</Modified>
+      <Modified>2013-06-28T15:11:16.475</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\SessionDetail.xaml">
+      <PackagePath>View\SessionDetail.xaml</PackagePath>
+      <Modified>2013-06-28T15:20:09.021</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-06-28T07:58:54.285</Modified>
+      <Modified>2013-06-28T15:14:39.480</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
