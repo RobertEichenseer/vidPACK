@@ -1,0 +1,1 @@
+C:\Sourcen\VidPack\VidPack\VidPackClient\VidPackClient.csproj;neutral

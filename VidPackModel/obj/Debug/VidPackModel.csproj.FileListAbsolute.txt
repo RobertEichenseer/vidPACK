@@ -1,0 +1,5 @@
+C:\Sourcen\VidPack\VidPack\VidPackModel\bin\Debug\VidPackModel.dll
+C:\Sourcen\VidPack\VidPack\VidPackModel\bin\Debug\VidPackModel.pdb
+C:\Sourcen\VidPack\VidPack\VidPackModel\obj\Debug\VidPackModel.csprojResolveAssemblyReference.cache
+C:\Sourcen\VidPack\VidPack\VidPackModel\obj\Debug\VidPackModel.dll
+C:\Sourcen\VidPack\VidPack\VidPackModel\obj\Debug\VidPackModel.pdb

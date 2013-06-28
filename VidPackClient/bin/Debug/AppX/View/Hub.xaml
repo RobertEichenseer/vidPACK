@@ -1,0 +1,170 @@
+﻿<common:LayoutAwarePage x:ConnectionId='1'
+    x:Name="pageRoot"
+    x:Class="VidPackClient.Hub"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VidPackClient"
+    xmlns:localVM="using:VidPackClient.ViewModel"
+    xmlns:localConverter="using:VidPackClient.Converter"
+    xmlns:common="using:VidPackClient.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mmppf="using:Microsoft.PlayerFramework"
+    mc:Ignorable="d" FontFamily="Global User Interface"                         
+    >
+
+    <Page.Resources>
+        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
+        <x:String x:Key="AppName">VidPack</x:String>
+
+        <localVM:HubViewModel x:Key="viewModel" />
+        <localConverter:DateTimeConverter x:Key="dateTimeConverter" />
+        
+        <DataTemplate x:Key="DataTemplateSession">
+            <StackPanel Orientation="Horizontal" Width="490">
+                <Image Source="ms-appx:///Assets/Session.jpg" Height="110" Width="200" />
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="{Binding SessionTitle}" Style="{StaticResource BasicTextStyle}" FontWeight="Bold" Margin="5,0,0,5"/>
+                    <TextBlock Text="{Binding SessionSubTitle}" Style="{StaticResource BasicTextStyle}"  Margin="5,0,0,5"/>
+                    <TextBlock Text="{Binding Speaker}" Style="{StaticResource BasicTextStyle}"   Margin="5,0,0,5"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+        
+    </Page.Resources>
+
+    <Grid Style="{StaticResource LayoutRootStyle}" DataContext="{Binding Source={StaticResource viewModel}}" >
+        <Grid.Background>
+            <SolidColorBrush Color="CadetBlue" />
+        </Grid.Background>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:ConnectionId='2' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
+        </Grid>
+        <!-- /Header -->
+        
+        <!-- Content -->
+        <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" x:Name="grdContent">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <ScrollViewer Grid.Row="0" Grid.Column="0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                <StackPanel Orientation="Horizontal">
+                    
+                    <!-- Latest Video -->
+                    <Frame Width="500" Margin="20,20,20,40" Background="Gray">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Actual Session / Latest Session" Style="{StaticResource GroupHeaderTextStyle}"  Margin="15"/>
+                            <mmppf:MediaPlayer 
+            x:Name="player" 
+            IsResolutionIndicatorVisible="True"
+            IsSignalStrengthVisible="True"
+            IsAudioSelectionVisible="True"
+            Source="http://robeichtechdemo.origin.mediaservices.windows.net/a9a6306d-98f2-4429-ae93-390149678375/Video1.ism/Manifest" />
+                            <!--<mmppf:MediaPlayer 
+                                x:Name="player" 
+                                IsResolutionIndicatorVisible="True"
+                                IsSignalStrengthVisible="True"
+                                IsAudioSelectionVisible="True"
+                                Source="http://smf.blob.core.windows.net/samples/videos/wildlife.mp4"
+                                 />-->
+                        </StackPanel>
+                    </Frame>
+                    <!--Source="http://robeichtechdemo.origin.mediaservices.windows.net/a9a6306d-98f2-4429-ae93-390149678375/Video1.ism/Manifest"-->
+                    <!-- /Latest Video -->
+
+                    <!-- Next Session -->
+                    <Frame x:Name="frmOrder" Width="500" Margin="0,20,0,40">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Save the date" Style="{StaticResource GroupHeaderTextStyle}" Margin="10" />
+                            <Grid Margin="10,5,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="80" />
+                                    <RowDefinition Height="20" />
+                                    <RowDefinition Height="60" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Frame Background="Azure" Grid.ColumnSpan="2">
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding Path=NextSession.SessionDate,Converter={StaticResource dateTimeConverter}}" Style="{StaticResource GroupHeaderTextStyle}" TextAlignment="Center" HorizontalAlignment="Center" Margin="0,15,0,0"/>
+                                </Frame>
+                                <TextBlock Grid.Column="0" Grid.Row="2"  Text="{Binding Path=NextSession.SessionTitle}" Style="{StaticResource HeaderTextStyle}" TextAlignment="Left"/>
+                                <TextBlock Grid.Column="0" Grid.Row="3"  Text="{Binding Path=NextSession.SessionSubTitle}" Style="{StaticResource GroupHeaderTextStyle}" TextAlignment="Left"/>
+                                <TextBlock Grid.Column="0" Grid.Row="4"  Text="{Binding Path=NextSession.Speaker}" Style="{StaticResource GroupHeaderTextStyle}" TextAlignment="Left"/>
+                                <TextBlock Grid.Column="0" Grid.Row="5"  TextWrapping="Wrap" Text="{Binding Path=NextSession.SessionDescription}" Style="{StaticResource ItemTextStyle}" TextAlignment="Left"/>
+                            </Grid>
+                        </StackPanel>
+
+                    </Frame>
+                    <!-- /Next Session -->
+
+                    <!-- Past Sessions -->
+                    <Frame Width="500" Margin="20,20,0,40">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Past Sessions" Style="{StaticResource GroupHeaderTextStyle}" Margin="10" />
+                            <GridView ItemsSource="{Binding Path=Sessions}" ItemTemplate="{StaticResource DataTemplateSession}" />
+                        </StackPanel>
+                    </Frame>
+                    <!-- /Past Sessions -->
+
+                    <!-- Download -->
+                    <Frame Width="500" Margin="0,20,0,40">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Download Shortcut" Style="{StaticResource GroupHeaderTextStyle}" Margin="10" />
+                                <ListBox x:Name="lbDownloads" ItemsSource="{Binding Path=DownloadItems}" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="300">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Text="{Binding Path=Caption}" />
+                                                <TextBlock Text="{Binding Path=Description}" />
+                                            </StackPanel>
+                                        </DataTemplate>                                    
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                        </StackPanel>
+
+                    </Frame>
+                    <!-- /Download -->
+
+                    <!-- Filler -->
+                    <Frame Width="100" />
+                    <!-- /Filler -->
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        
+        <!-- /Content -->
+        
+        
+        
+        
+    </Grid>
+</common:LayoutAwarePage>
+

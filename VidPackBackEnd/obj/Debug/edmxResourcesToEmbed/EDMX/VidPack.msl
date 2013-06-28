@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VidPackModelStoreContainer" CdmEntityContainer="VidPackEntities">
+    <EntitySetMapping Name="ExistingSession">
+      <EntityTypeMapping TypeName="VidPackModel.ExistingSession">
+        <MappingFragment StoreEntitySet="ExistingSession">
+          <ScalarProperty Name="IsNextSession" ColumnName="IsNextSession" />
+          <ScalarProperty Name="IsActualSession" ColumnName="IsActualSession" />
+          <ScalarProperty Name="SessionThumbnailUri" ColumnName="SessionThumbnailUri" />
+          <ScalarProperty Name="SessionVideoUri" ColumnName="SessionVideoUri" />
+          <ScalarProperty Name="SessionDescription" ColumnName="SessionDescription" />
+          <ScalarProperty Name="Speaker" ColumnName="Speaker" />
+          <ScalarProperty Name="SessionDate" ColumnName="SessionDate" />
+          <ScalarProperty Name="SessionSubTitle" ColumnName="SessionSubTitle" />
+          <ScalarProperty Name="SessionTitle" ColumnName="SessionTitle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
