@@ -1,11 +1,14 @@
-﻿using System;
+﻿using Callisto.Controls;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using VidPackClient.View;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ApplicationSettings;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -31,6 +34,20 @@ namespace VidPackClient
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+        }
+
+        void App_CommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
+        {
+            SettingsCommand settingBackendUrl = new SettingsCommand("SettingBackendUrl", "Settings", (e) =>
+            {
+                SettingsFlyout settingsFlyout = new SettingsFlyout();
+                settingsFlyout.FlyoutWidth = SettingsFlyout.SettingsFlyoutWidth.Narrow;
+                settingsFlyout.HeaderText = "Settings";
+                settingsFlyout.Content = new Settings();
+                settingsFlyout.IsOpen = true; 
+            });
+
+            args.Request.ApplicationCommands.Add(settingBackendUrl); 
         }
 
         /// <summary>
@@ -71,6 +88,8 @@ namespace VidPackClient
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+            SettingsPane.GetForCurrentView().CommandsRequested += App_CommandsRequested;
         }
 
         /// <summary>

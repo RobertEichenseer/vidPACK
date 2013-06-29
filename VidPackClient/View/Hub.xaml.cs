@@ -32,7 +32,6 @@ namespace VidPackClient
 
         public Hub()
         {
-            
             this.InitializeComponent();
             grdMain.DataContext = _viewModel;
         }

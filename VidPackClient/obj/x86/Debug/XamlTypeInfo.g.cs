@@ -170,6 +170,8 @@ namespace VidPackClient.VidPackClient_XamlTypeInfo
 
         private object Activate_43_SessionDetail() { return new global::VidPackClient.View.SessionDetail(); }
 
+        private object Activate_44_Settings() { return new global::VidPackClient.View.Settings(); }
+
         private void VectorAdd_3_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::VidPackModel.Session>)instance;
@@ -1080,6 +1082,12 @@ namespace VidPackClient.VidPackClient_XamlTypeInfo
                 xamlType = userType;
                 break;
 
+            case "VidPackClient.View.Settings":
+                userType = new global::VidPackClient.VidPackClient_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::VidPackClient.View.Settings), GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_44_Settings;
+                xamlType = userType;
+                break;
+
             }
             return xamlType;
         }
@@ -1098,6 +1106,8 @@ namespace VidPackClient.VidPackClient_XamlTypeInfo
                     provider = new global::Microsoft.PlayerFramework.Microsoft_PlayerFramework_Xaml_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
                     _otherProviders.Add(provider); 
                     provider = new global::Microsoft.TimedText.Microsoft_TimedText_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
+                    _otherProviders.Add(provider); 
+                    provider = new global::Callisto.Callisto_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
                     _otherProviders.Add(provider); 
                 }
                 return _otherProviders;

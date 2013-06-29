@@ -9,6 +9,7 @@ namespace VidPackClient.BL
 {
     public interface ICommonBl
     {
+        void SetConfigPara(object configPara);
         Task<Session> LoadActualSession();
         Task<Session> LoadNextSession();
         Task<List<Session>> LoadPastSession();

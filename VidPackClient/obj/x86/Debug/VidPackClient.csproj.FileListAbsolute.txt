@@ -101,3 +101,9 @@ C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\ProjectArchitectures.txt
 C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\SessionDetail.g.i.cs
 C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\SessionDetail.g.cs
 C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\SessionDetail.xaml
+C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\Callisto.dll
+C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\Callisto.pri
+C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\Settings.g.i.cs
+C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\Settings.g.cs
+C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\Settings.xaml
+C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\Callisto.pri.xml

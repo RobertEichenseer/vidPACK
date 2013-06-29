@@ -16,8 +16,12 @@ namespace VidPackClient.Bl
     public class CommonBl_RestWebService : ICommonBl
     {
         //public Uri _webServiceUri = new Uri("http://localhost:19513/api/");
-        public Uri _webServiceUri = new Uri("http://vidpack.azurewebsites.net/api/");
+        public Uri _webServiceUri;  //= new Uri("http://vidpack.azurewebsites.net/api/");
 
+        public void SetConfigPara(object configPara)
+        {
+            _webServiceUri = new Uri((string)configPara); 
+        }
 
         public async Task<Session> LoadActualSession()
         {
@@ -79,6 +83,7 @@ namespace VidPackClient.Bl
                 return (T)serializer.ReadObject(memoryStream);
             }
         }
+
 
     }
 }

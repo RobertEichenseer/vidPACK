@@ -9,4 +9,5 @@ App.xaml
 Common\StandardStyles.xaml
 View\Hub.xaml
 View\SessionDetail.xaml
+View\Settings.xaml
 Common\ReadMe.txt

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using VidPackClient.BL;
 using VidPackClient.Common;
 using VidPackModel;
+using Windows.Storage;
 
 namespace VidPackClient.ViewModel
 {
@@ -42,6 +43,8 @@ namespace VidPackClient.ViewModel
         {
             _bl = bl;
 
+            ReadConfigParameter();
+            
             Sessions = new ObservableCollection<Session>();
             DownloadItems = new ObservableCollection<DownloadItem>(); 
         }
@@ -71,6 +74,20 @@ namespace VidPackClient.ViewModel
             ActualSession = await _bl.LoadActualSession();
             NextSession = await _bl.LoadNextSession();
             Sessions = new ObservableCollection<Session>(await _bl.LoadPastSession());
+        }
+
+        private void ReadConfigParameter()
+        {
+            ApplicationDataContainer applicationDataContainer = ApplicationData.Current.LocalSettings;
+            string webServiceUrl = applicationDataContainer.Values["webServiceUrl"] as string;
+            if (String.IsNullOrEmpty(webServiceUrl))
+            {
+                //webServiceUrl = "http://localhost:19513/api/";
+                //webServiceUrl = "http://vidpack.azurewebsites.net/api/";
+                webServiceUrl = "http://vidpack.azurewebsites.net/api/";
+                applicationDataContainer.Values["webServiceUrl"] = webServiceUrl; 
+            }
+            _bl.SetConfigPara(webServiceUrl); 
         }
     }
 
