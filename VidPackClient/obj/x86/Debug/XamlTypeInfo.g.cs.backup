@@ -1070,7 +1070,7 @@ namespace VidPackClient.VidPackClient_XamlTypeInfo
                 userType = new global::VidPackClient.VidPackClient_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::VidPackClient.ViewModel.SessionDetailViewModel), GetXamlTypeByName("VidPackClient.Common.BindableBase"));
                 userType.Activator = Activate_42_SessionDetailViewModel;
                 userType.AddMemberName("SelectedSession");
-                userType.AddMemberName("_bl");
+                userType.AddMemberName("Bl");
                 xamlType = userType;
                 break;
 
@@ -2531,15 +2531,15 @@ namespace VidPackClient.VidPackClient_XamlTypeInfo
             var that = (global::VidPackClient.ViewModel.SessionDetailViewModel)instance;
             that.SelectedSession = (global::VidPackModel.Session)Value;
         }
-        private object get_162_SessionDetailViewModel__bl(object instance)
+        private object get_162_SessionDetailViewModel_Bl(object instance)
         {
             var that = (global::VidPackClient.ViewModel.SessionDetailViewModel)instance;
-            return that._bl;
+            return that.Bl;
         }
-        private void set_162_SessionDetailViewModel__bl(object instance, object Value)
+        private void set_162_SessionDetailViewModel_Bl(object instance, object Value)
         {
             var that = (global::VidPackClient.ViewModel.SessionDetailViewModel)instance;
-            that._bl = (global::VidPackClient.BL.ICommonBl)Value;
+            that.Bl = (global::VidPackClient.BL.ICommonBl)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -3640,11 +3640,11 @@ namespace VidPackClient.VidPackClient_XamlTypeInfo
                 xamlMember.Getter = get_161_SessionDetailViewModel_SelectedSession;
                 xamlMember.Setter = set_161_SessionDetailViewModel_SelectedSession;
                 break;
-            case "VidPackClient.ViewModel.SessionDetailViewModel._bl":
+            case "VidPackClient.ViewModel.SessionDetailViewModel.Bl":
                 userType = (global::VidPackClient.VidPackClient_XamlTypeInfo.XamlUserType)GetXamlTypeByName("VidPackClient.ViewModel.SessionDetailViewModel");
-                xamlMember = new global::VidPackClient.VidPackClient_XamlTypeInfo.XamlMember(this, "_bl", "VidPackClient.BL.ICommonBl");
-                xamlMember.Getter = get_162_SessionDetailViewModel__bl;
-                xamlMember.Setter = set_162_SessionDetailViewModel__bl;
+                xamlMember = new global::VidPackClient.VidPackClient_XamlTypeInfo.XamlMember(this, "Bl", "VidPackClient.BL.ICommonBl");
+                xamlMember.Getter = get_162_SessionDetailViewModel_Bl;
+                xamlMember.Setter = set_162_SessionDetailViewModel_Bl;
                 break;
             }
             return xamlMember;

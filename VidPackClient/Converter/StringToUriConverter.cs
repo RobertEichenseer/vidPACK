@@ -12,7 +12,7 @@ namespace VidPackClient.Converter
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             Uri returnValue = null; 
-            if (value != null)
+            if (value != null && value != String.Empty)
                 returnValue = new Uri((string)value); 
 
             return returnValue; 

@@ -128,6 +128,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="Assets\VidPack.bacpac" />
     <None Include="packages.config" />
     <None Include="VidPackClient_TemporaryKey.pfx" />
   </ItemGroup>
@@ -136,6 +137,7 @@
     <Content Include="Assets\Logo.png" />
     <Content Include="Assets\Session.jpg" />
     <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\Splash.jpg" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Common\ReadMe.txt" />

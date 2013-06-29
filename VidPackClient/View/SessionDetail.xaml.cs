@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using VidPackClient.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -21,6 +22,9 @@ namespace VidPackClient.View
     /// </summary>
     public sealed partial class SessionDetail : VidPackClient.Common.LayoutAwarePage
     {
+
+        SessionDetailViewModel _viewModel = null; 
+
         public SessionDetail()
         {
             this.InitializeComponent();
@@ -47,6 +51,17 @@ namespace VidPackClient.View
         /// <param name="pageState">An empty dictionary to be populated with serializable state.</param>
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            SessionDetailInputPara inputPara = (SessionDetailInputPara)e.Parameter; 
+            _viewModel = new SessionDetailViewModel(inputPara.Bl);
+            grdMain.DataContext = _viewModel;
+            _viewModel.SelectedSession = inputPara.SelectedSession; 
+            
+            base.OnNavigatedTo(e);
+
         }
     }
 }

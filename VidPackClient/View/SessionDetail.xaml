@@ -13,8 +13,6 @@
     xmlns:mmppf="using:Microsoft.PlayerFramework"
     mc:Ignorable="d">
     
-    
-
     <Page.Resources>
         <x:String x:Key="pageTitle">VidPack; Session Details</x:String>
         <localVM:SessionDetailViewModel x:Key="viewModel" />

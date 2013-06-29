@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-06-28T15:25:07.163</Modified>
+      <Modified>2013-06-29T14:29:29.778</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.exe">
       <PackagePath>VidPackClient.exe</PackagePath>
-      <Modified>2013-06-29T06:10:11.932</Modified>
+      <Modified>2013-06-29T14:29:28.150</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.pdb">
       <PackagePath>VidPackClient.pdb</PackagePath>
-      <Modified>2013-06-29T06:10:11.908</Modified>
+      <Modified>2013-06-29T14:29:28.127</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\References\CommonConfiguration\x86\Microsoft.AdaptiveStreaming.Analytics.winmd">
       <PackagePath>Microsoft.AdaptiveStreaming.Analytics.winmd</PackagePath>
@@ -140,6 +140,10 @@
       <PackagePath>Assets\Session.jpg</PackagePath>
       <Modified>2013-06-27T15:26:11.119</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\Splash.jpg">
+      <PackagePath>Assets\Splash.jpg</PackagePath>
+      <Modified>2013-06-29T14:11:38.562</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
@@ -153,7 +157,7 @@
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\SplashScreen.png">
       <PackagePath>Assets\SplashScreen.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-03-15T19:42:52.000</Modified>
+      <Modified>2013-06-29T14:29:21.801</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
@@ -178,11 +182,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\SessionDetail.xaml">
       <PackagePath>View\SessionDetail.xaml</PackagePath>
-      <Modified>2013-06-29T05:25:36.646</Modified>
+      <Modified>2013-06-29T14:05:30.892</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-06-28T15:14:39.480</Modified>
+      <Modified>2013-06-29T14:29:28.282</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -103,6 +103,9 @@
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\Session.jpg">
       <PackagePath>Assets\Session.jpg</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\Splash.jpg">
+      <PackagePath>Assets\Splash.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
