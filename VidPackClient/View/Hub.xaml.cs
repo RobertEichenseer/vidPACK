@@ -75,7 +75,7 @@ namespace VidPackClient
                 return;
 
             Session selectedSession = (Session)e.AddedItems[0];
-            Frame.Navigate(typeof(SessionDetail), new SessionDetailInputPara() { SelectedSession = selectedSession }); 
+            Frame.Navigate(typeof(SessionDetail), new SessionDetailInputPara() { SelectedSession = selectedSession, Bl = _viewModel._bl }); 
         }
     }
 }

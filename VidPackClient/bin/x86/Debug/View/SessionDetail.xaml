@@ -6,9 +6,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:VidPackClient.View"
     xmlns:localVM="using:VidPackClient.ViewModel"
+    xmlns:localConverter="using:VidPackClient.Converter"
     xmlns:common="using:VidPackClient.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mmppf="using:Microsoft.PlayerFramework"
     mc:Ignorable="d">
     
     
@@ -16,6 +18,7 @@
     <Page.Resources>
         <x:String x:Key="pageTitle">VidPack; Session Details</x:String>
         <localVM:SessionDetailViewModel x:Key="viewModel" />
+        <localConverter:UriConverter x:Key="uriConverter" />
     </Page.Resources>
 
     <Grid x:Name="grdMain" Style="{StaticResource LayoutRootStyle}" DataContext="{Binding Source={StaticResource viewModel}}" >
@@ -40,13 +43,38 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:ConnectionId='1' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource pageTitle}" Style="{StaticResource PageHeaderTextStyle}"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{Binding Path=SelectedSession.SessionTitle}" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
         <!-- /Header -->
 
         <!-- Content -->
         <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" x:Name="grdContent">
+            <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Horizontal">
+                    
+                    <StackPanel Orientation="Vertical" Width="700">
+                        <TextBlock Text="{Binding Path=SelectedSession.SessionSubTitle}" Style="{StaticResource GroupHeaderTextStyle}" TextAlignment="Left" Margin="20,0,20,5"/>
+                        <TextBlock Text="{Binding Path=SelectedSession.Speaker}" Style="{StaticResource GroupHeaderTextStyle}" TextAlignment="Left" Margin="20,20,20,5"/>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding Path=SelectedSession.SessionDescription}" Style="{StaticResource ItemTextStyle}" TextAlignment="Left" Margin="20,20,20,5" />
+                    </StackPanel>
+                    
+                    <!-- Selected Video -->
+                    <Frame Padding="10,0,10,20">
+                        <mmppf:MediaPlayer  x:Name="PreviewPlayer" 
+                                                IsResolutionIndicatorVisible="True"
+                                                IsSignalStrengthVisible="True"
+                                                IsAudioSelectionVisible="True" 
+                                                AutoPlay="False"   
+                                                Source="{Binding Path=SelectedSession.SessionVideoUrl,Converter={StaticResource uriConverter}}" />
+                    </Frame>
+                    <!-- /Selected Video -->
+                    
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </common:LayoutAwarePage>
+
+
+
 

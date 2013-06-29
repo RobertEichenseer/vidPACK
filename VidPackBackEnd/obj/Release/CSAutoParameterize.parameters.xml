@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-VidPackBackEnd-20130628100405;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-VidPackBackEnd-20130628100405.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Sourcen\\VidPack\\VidPackBackEnd\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="VidPackEntities-Web.config Connection String" description="VidPackEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/EDMX.VidPack.csdl|res://*/EDMX.VidPack.ssdl|res://*/EDMX.VidPack.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=akwc5zaocf.database.windows.net;initial catalog=VidPack;User ID=msAdministrator;Password=Azure2012!!;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Sourcen\\VidPack\\VidPackBackEnd\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='VidPackEntities']/@connectionString" />
+  </parameter>
+</parameters>

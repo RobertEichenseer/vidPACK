@@ -37,7 +37,7 @@ namespace VidPackClient.ViewModel
         }
 
         //Constroctor with BusinessLogig
-        ICommonBl _bl; 
+        public ICommonBl _bl {get; set;} 
         public HubViewModel(ICommonBl bl)
         {
             _bl = bl;

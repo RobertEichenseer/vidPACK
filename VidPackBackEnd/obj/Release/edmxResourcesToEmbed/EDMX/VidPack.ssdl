@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VidPackModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="VidPackModelStoreContainer">
+    <EntitySet Name="ExistingSession" EntityType="VidPackModel.Store.ExistingSession" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="ExistingSession">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SessionTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SessionSubTitle" Type="nvarchar" MaxLength="150" />
+    <Property Name="SessionDate" Type="datetime" />
+    <Property Name="Speaker" Type="nvarchar" MaxLength="50" />
+    <Property Name="SessionDescription" Type="ntext" />
+    <Property Name="SessionVideoUri" Type="ntext" />
+    <Property Name="SessionThumbnailUri" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsActualSession" Type="int" />
+    <Property Name="IsNextSession" Type="int" />
+  </EntityType>
+</Schema>
