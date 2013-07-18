@@ -83,7 +83,6 @@ namespace VidPackClient.ViewModel
             if (String.IsNullOrEmpty(webServiceUrl))
             {
                 //webServiceUrl = "http://localhost:19513/api/";
-                //webServiceUrl = "http://vidpack.azurewebsites.net/api/";
                 webServiceUrl = "http://vidpack.azurewebsites.net/api/";
                 applicationDataContainer.Values["webServiceUrl"] = webServiceUrl; 
             }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using VidPackClient.Common;
 using VidPackClient.View;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -85,6 +86,7 @@ namespace VidPackClient
                 {
                     throw new Exception("Failed to create initial page");
                 }
+                
             }
             // Ensure the current window is active
             Window.Current.Activate();

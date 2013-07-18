@@ -61,7 +61,6 @@ namespace VidPackClient.View
             _viewModel.SelectedSession = inputPara.SelectedSession; 
             
             base.OnNavigatedTo(e);
-
         }
     }
 }
