@@ -47,8 +47,18 @@ namespace VidPackClient
                 settingsFlyout.Content = new Settings();
                 settingsFlyout.IsOpen = true; 
             });
+            args.Request.ApplicationCommands.Add(settingBackendUrl);
 
-            args.Request.ApplicationCommands.Add(settingBackendUrl); 
+            SettingsCommand settingPrivacyPolicy = new SettingsCommand("PrivacyPolicy", "PrivacyPolicy", (e) =>
+            {
+                SettingsFlyout settingsFlyout = new SettingsFlyout();
+                settingsFlyout.FlyoutWidth = SettingsFlyout.SettingsFlyoutWidth.Narrow;
+                settingsFlyout.HeaderText = "Privacy Policy";
+                settingsFlyout.Content = new PrivacyPolicy();
+                settingsFlyout.IsOpen = true;
+            });
+            args.Request.ApplicationCommands.Add(settingPrivacyPolicy); 
+
         }
 
         /// <summary>

@@ -25,7 +25,7 @@
         <DataTemplate x:Key="DataTemplateSession">
             <Grid Width="590">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -34,7 +34,8 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="{Binding SessionTitle}" Style="{StaticResource BasicTextStyle}" FontWeight="Bold" Margin="5,0,0,5"/>
-                <Image Grid.Column="0" Grid.Row="1" Source="ms-appx:///Assets/SessionPlaceholder.jpg" Height="110" Width="200" />
+                <Image Grid.Column="0" Grid.Row="1" Source="{Binding SessionThumbnailDisplayUrl}" Height="110" Width="150" HorizontalAlignment="Left" Margin="5,0,0,5"/>
+                
                 <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
                     <TextBlock TextWrapping="Wrap" Width="350" Text="{Binding SessionSubTitle}" Style="{StaticResource BasicTextStyle}"  Margin="5,0,0,5"/>
                     <TextBlock TextWrapping="Wrap" Width="350" Text="{Binding Speaker}" Style="{StaticResource BasicTextStyle}"   Margin="5,0,0,5"/>
@@ -126,7 +127,7 @@
                     <!-- Next Session -->
                     <Frame x:Name="frmNextSession" Width="500" Margin="20,20,20,40">
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Text="Save the date" Style="{StaticResource GroupHeaderTextStyle}" Margin="10" />
+                            <TextBlock Text="Save the date" Style="{StaticResource GroupHeaderTextStyle}" Margin="10" Tapped="TextBlock_Tapped"/>
                             <Grid Margin="10,5,0,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="490" />
@@ -147,6 +148,7 @@
                                 <TextBlock Grid.Column="0" Grid.Row="4"  Text="{Binding Path=NextSession.Speaker}" Style="{StaticResource GroupHeaderTextStyle}" TextAlignment="Left"/>
                                 <TextBlock Grid.Column="0" Grid.Row="5"  TextWrapping="Wrap" Text="{Binding Path=NextSession.SessionDescription}" Style="{StaticResource ItemTextStyle}" TextAlignment="Left"/>
                             </Grid>
+                            <Image x:Name="imgTest" />
                         </StackPanel>
 
                     </Frame>

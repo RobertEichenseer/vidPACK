@@ -107,3 +107,6 @@ C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\Settings.g.i.cs
 C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\Settings.g.cs
 C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\Settings.xaml
 C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\Callisto.pri.xml
+C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\PrivacyPolicy.g.i.cs
+C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\PrivacyPolicy.g.cs
+C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\PrivacyPolicy.xaml

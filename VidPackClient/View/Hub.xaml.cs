@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
  
 
@@ -61,11 +62,7 @@ namespace VidPackClient
 
         private void pageRoot_Loaded(object sender, RoutedEventArgs e)
         {
-            //ListBox Sizing
-            //lbDownloads.Height= grdContent.ActualHeight - 160;
-
             _viewModel.LoadHubContent();
-            
         }
 
         private void PastSession_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -75,6 +72,14 @@ namespace VidPackClient
 
             Session selectedSession = (Session)e.AddedItems[0];
             Frame.Navigate(typeof(SessionDetail), new SessionDetailInputPara() { SelectedSession = selectedSession, Bl = _viewModel._bl }); 
+        }
+
+        private void TextBlock_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var url = _viewModel.Sessions[0].SessionThumbnailUrl;
+            BitmapImage image = new BitmapImage(new Uri(url));
+            
+            this.imgTest.Source = image; 
         }
     }
 }

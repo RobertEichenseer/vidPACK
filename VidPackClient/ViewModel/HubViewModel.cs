@@ -37,7 +37,7 @@ namespace VidPackClient.ViewModel
             set { _actualSession = value; OnPropertyChanged("ActualSession"); }
         }
 
-        //Constroctor with BusinessLogig
+        //Constructor with BusinessLogic
         public ICommonBl _bl {get; set;} 
         public HubViewModel(ICommonBl bl)
         {
@@ -74,6 +74,16 @@ namespace VidPackClient.ViewModel
             ActualSession = await _bl.LoadActualSession();
             NextSession = await _bl.LoadNextSession();
             Sessions = new ObservableCollection<Session>(await _bl.LoadPastSession());
+
+            //Async load of Speaker Images;
+            Sessions = await Task.Run<ObservableCollection<Session>>(() =>
+            {
+                //Todo: Integration of error handling
+                foreach (Session session in Sessions)
+                    session.SessionThumbnailDisplayUrl = session.SessionThumbnailUrl;
+
+                return Sessions;
+            }); 
         }
 
         private void ReadConfigParameter()
@@ -82,10 +92,12 @@ namespace VidPackClient.ViewModel
             string webServiceUrl = applicationDataContainer.Values["webServiceUrl"] as string;
             if (String.IsNullOrEmpty(webServiceUrl))
             {
-                //webServiceUrl = "http://localhost:19513/api/";
+                
                 webServiceUrl = "http://vidpack.azurewebsites.net/api/";
-                applicationDataContainer.Values["webServiceUrl"] = webServiceUrl; 
+                applicationDataContainer.Values["webServiceUrl"] = webServiceUrl;
+                
             }
+            //webServiceUrl = "http://localhost:19513/api/";
             _bl.SetConfigPara(webServiceUrl); 
         }
     }

@@ -4,10 +4,13 @@ Assets\SessionPlaceholder.jpg
 Assets\SmallLogo.png
 Assets\Splash.jpg
 Assets\SplashScreen.png
+Assets\SplashScreen.scale-100.png
+Assets\SplashScreen.scale-180.png
 Assets\StoreLogo.png
 App.xaml
 Common\StandardStyles.xaml
 View\Hub.xaml
+View\PrivacyPolicy.xaml
 View\SessionDetail.xaml
 View\Settings.xaml
 Common\ReadMe.txt

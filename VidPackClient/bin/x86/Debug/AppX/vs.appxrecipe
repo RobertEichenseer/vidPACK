@@ -5,7 +5,7 @@
     <WindowsUser>robeich</WindowsUser>
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
-    <RegisteredManifestChecksum>86FDE54AB96799047456AC76D9C88F1A45C7ED8539013DD460AFAFCBBAF71645</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>22CDCAAAEA715EA969F232BCB036E819B495E5FA3D763B156A9B83B477757AE7</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>aa40d28d-d0ab-4efd-ab06-a0ee70f0cac2_1.0.0.0_x86__3c2me0befwq6t</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>aa40d28d-d0ab-4efd-ab06-a0ee70f0cac2_3c2me0befwq6t!App</RegisteredUserModeAppID>
     <RegisteredPackageID>aa40d28d-d0ab-4efd-ab06-a0ee70f0cac2</RegisteredPackageID>
@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-06-29T14:56:17.795</Modified>
+      <Modified>2013-07-19T09:19:45.841</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.exe">
       <PackagePath>VidPackClient.exe</PackagePath>
-      <Modified>2013-07-18T16:13:29.780</Modified>
+      <Modified>2013-07-19T09:04:26.697</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.pdb">
       <PackagePath>VidPackClient.pdb</PackagePath>
-      <Modified>2013-07-18T16:13:29.751</Modified>
+      <Modified>2013-07-19T09:04:26.659</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\References\CommonConfiguration\x86\Microsoft.AdaptiveStreaming.Analytics.winmd">
       <PackagePath>Microsoft.AdaptiveStreaming.Analytics.winmd</PackagePath>
@@ -86,7 +86,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackModel\bin\Debug\VidPackModel.dll">
       <PackagePath>VidPackModel.dll</PackagePath>
-      <Modified>2013-06-28T11:34:00.758</Modified>
+      <Modified>2013-07-19T08:22:58.941</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Adaptive\1.8.0.5\References\CommonConfiguration\x86\Microsoft.PlayerFramework.Adaptive.xml">
       <PackagePath>Microsoft.PlayerFramework.Adaptive.xml</PackagePath>
@@ -114,7 +114,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackModel\bin\Debug\VidPackModel.pdb">
       <PackagePath>VidPackModel.pdb</PackagePath>
-      <Modified>2013-06-28T11:34:00.737</Modified>
+      <Modified>2013-07-19T08:22:58.919</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\EntertainmentTheme.xaml">
       <PackagePath>Microsoft.PlayerFramework\Themes\EntertainmentTheme.xaml</PackagePath>
@@ -146,7 +146,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\Splash.jpg">
       <PackagePath>Assets\Splash.jpg</PackagePath>
-      <Modified>2013-06-29T14:11:38.562</Modified>
+      <Modified>2012-03-15T19:42:52.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
@@ -161,7 +161,17 @@
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\SplashScreen.png">
       <PackagePath>Assets\SplashScreen.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-06-29T14:29:21.801</Modified>
+      <Modified>2012-03-15T19:42:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-15T19:42:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\SplashScreen.scale-180.png">
+      <PackagePath>Assets\SplashScreen.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-15T19:42:52.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
@@ -182,7 +192,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\Hub.xaml">
       <PackagePath>View\Hub.xaml</PackagePath>
-      <Modified>2013-07-18T15:56:40.937</Modified>
+      <Modified>2013-07-19T08:23:23.478</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\PrivacyPolicy.xaml">
+      <PackagePath>View\PrivacyPolicy.xaml</PackagePath>
+      <Modified>2013-07-19T08:41:35.303</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\SessionDetail.xaml">
       <PackagePath>View\SessionDetail.xaml</PackagePath>
@@ -198,7 +212,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-06-29T14:56:16.574</Modified>
+      <Modified>2013-07-19T09:19:44.213</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

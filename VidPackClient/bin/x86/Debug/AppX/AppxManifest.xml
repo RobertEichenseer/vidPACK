@@ -22,7 +22,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="VidPackClient.exe" EntryPoint="VidPackClient.App">
-      <VisualElements DisplayName="VidPackClient" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="VidPackClient" ForegroundText="light" BackgroundColor="#464646">
+      <VisualElements DisplayName="VidPackClient" Logo="assets\logo.png" SmallLogo="Assets\SmallLogo.png" Description="VidPackClient" ForegroundText="light" BackgroundColor="#464646">
         <DefaultTile ShowName="allLogos" />
         <SplashScreen Image="Assets\SplashScreen.png" />
       </VisualElements>
@@ -42,138 +42,138 @@
         <ActivatableClass ActivatableClassId="Microsoft.AdaptiveStreaming.Analytics.AdaptiveMonitor" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.AdaptiveStreaming.Analytics.AdaptiveMonitorFactory" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.AdaptiveStreaming.AdaptiveAudioStream" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.AdaptiveStreaming.AdaptiveCaptionStream" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.AdaptiveStreaming.ConditionalUInt" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.AdaptiveStreaming.AdaptiveCaptionStream" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.AdaptiveStreaming.AdaptiveStreamingManager" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.DocumentAdPayloadHandler" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdModelFactory" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWVisitor" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.CreativeCompanions" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.DeactivateAdUnitEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdPod" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.NonLinear" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.StaticResource" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdDocumentPayload" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdInteractionEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWAdReference" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.IFrameResource" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWAsset" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.MastModelFactory" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.MarkerHelper" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Source" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.ClickThroughEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VmapFactory" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Pricing" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Extension" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VmapAdSource" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.ActivateAdUnitEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VpaidExtensions" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.MediaFile" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FreeWheelFactory" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FlexibleOffset" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWCreativeRendition" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWSiteSection" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWState" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Trigger" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWAdSlot" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.HtmlResource" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.MAST" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWVideoPlayer" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VmapExtension" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWUrl" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VmapTrackingEvent" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Ad" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Companion" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWNonTemporalAdSlot" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.CreativeLinear" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Mainsail" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWParameter" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VastAdPayloadHandler" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWAdResponse" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.CreativeNonLinears" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWError" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdFailureEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.UnloadPlayerEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWAd" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWCreative" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Icon" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.LoadPlayerEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Extensions" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VastHelpers" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VmapAdBreak" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWVideoAsset" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWTemporalAdSlot" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.TrackingEvent" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdHandlerController" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.ClipAdPayloadHandler" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdTracking" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Target" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdSystem" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.TrackingFailureEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWEventCallback" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.NavigationRequestEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.LoadPlayerEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWVideoPlayer" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Condition" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWNonTemporalAdSlot" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.ClipAdPayloadHandler" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWAsset" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.UnloadPlayerEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VmapAdBreak" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VastAdPayloadHandler" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.IFrameResource" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.DeactivateAdUnitEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.NonLinear" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdTracking" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.MAST" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWUrl" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWAd" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.ClickThroughEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VmapExtension" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Mainsail" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdDocumentPayload" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.CreativeNonLinears" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWAdResponse" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.MediaFile" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdInteractionEventArgs" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VpaidMessageEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWAdReference" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Pricing" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWVisitor" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWState" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Icon" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Trigger" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWParameter" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VmapAdSource" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdHandlerController" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VmapFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FlexibleOffset" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWHttpHeader" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Companion" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Ad" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.CreativeLinear" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWAdSlot" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.TrackingEvent" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VmapTrackingEvent" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.MastModelFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.CreativeCompanions" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.HtmlResource" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWSiteSection" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.ActivateAdUnitEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdPod" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Vmap" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.EdgeServerMonitor" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.StreamFailedLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.LoggingExtensions" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.AudioTrackChangedLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.BufferingChangedLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.BatchingConfig" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.FpsLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.ChunkDownloadLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.HealthMonitor" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.CaptionTrackChangedLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.QualityReport" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.CpuLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.EdgeServerResult" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.AnalyticsConfig" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.LogMappings" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.DownloadErrorReport" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.DownloadErrorLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdModelFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Extensions" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWCreative" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.NavigationRequestEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.StaticResource" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.AdFailureEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.DocumentAdPayloadHandler" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.MarkerHelper" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWTemporalAdSlot" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FreeWheelFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWEventCallback" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWCreativeRendition" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Target" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.Source" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VpaidExtensions" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWVideoAsset" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.VastHelpers" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.TrackingFailureEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAdvertising.FWError" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.RESTDataClient" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.MappingRules" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.ClipEventLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.LatencyAlertLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.EdgeServerConfig" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.EdgeServerRules" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.LoggingService" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.LogEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.ChunkFailureEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.LogBatchResult" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.AppStartLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.FpsLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.EdgeServerMonitor" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.HealthMonitor" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.ClipEventLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.BatchingConfig" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.QualityConfig" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.LoggingExtensions" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.CaptionTrackChangedLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.KeyValuePairMapping" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.BufferingChangedLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.DownloadErrorLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.AudioTrackChangedLog" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.CurrentBitrateChangedEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.StreamEventLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.FullscreenChangedLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.BufferSizeLog" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.DvrOperationLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.StreamLoadedLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.ClipEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.ChunkDownloadedEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.StreamEventLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.LatencyAlertLog" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.BatchingLogAgent" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.PerceivedBandwidthLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.LoggingConfig" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.StreamFailedEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.KeyValuePairMapping" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.ChunkDownloadedEventArgs" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.RESTDataClient" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.BatchingConfigFactory" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.ErrorLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.BitrateChangedLog" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.QualityConfig" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.EdgeServerRules" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.DownloadErrorReport" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.AppStartLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.EdgeServerResult" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.AnalyticsConfig" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.StreamFailedLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.LogEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.CpuLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.LogBatchResult" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.FullscreenChangedLog" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.BatchEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.QualityReport" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.ChunkFailureEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.LoggingConfig" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.EdgeServerConfig" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.LogMappings" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.StreamFailedEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.BatchingConfigFactory" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.ChunkDownloadLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.ErrorLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.ClipEventArgs" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.BufferSizeLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.StreamLoadedLog" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.VideoAnalytics.BitrateChangedLog" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
     <Extension Category="windows.activatableClass.inProcessServer">
       <InProcessServer>
         <Path>Microsoft.Media.AdaptiveStreaming.dll</Path>
-        <ActivatableClass ActivatableClassId="Microsoft.Media.AdaptiveStreaming.AdaptiveSourceManager" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Media.AdaptiveStreaming.HttpCookie" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Media.AdaptiveStreaming.DownloaderRequest" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Media.AdaptiveStreaming.SmoothByteStreamHandler" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Media.AdaptiveStreaming.DownloaderResponse" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="Microsoft.Media.AdaptiveStreaming.AdaptiveSource" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Microsoft.Media.AdaptiveStreaming.SmoothSchemeHandler" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Media.AdaptiveStreaming.AdaptiveSourceManager" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Media.AdaptiveStreaming.AdaptiveSource" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Media.AdaptiveStreaming.HttpCookie" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Media.AdaptiveStreaming.SmoothByteStreamHandler" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Media.AdaptiveStreaming.DownloaderRequest" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Media.AdaptiveStreaming.DownloaderResponse" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>
@@ -190,6 +190,6 @@
     <build:Item Name="Microsoft.PlayerFramework.Xaml.Advertising" Version="1.8.0.5" />
     <build:Item Name="Microsoft.PlayerFramework.Xaml.Analytics" Version="1.8.0.5" />
     <build:Item Name="Microsoft.PlayerFramework.Xaml.TimedText" Version="1.8.0.5" />
-    <build:Item Name="MakePri.exe" Version="6.2.9200.16384 (win8_rtm.120725-1247)" />
+    <build:Item Name="MakePri.exe" Version="6.2.9200.20714 (win8_ldr.130510-1807)" />
   </build:Metadata>
 </Package>

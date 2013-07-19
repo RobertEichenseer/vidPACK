@@ -16,7 +16,7 @@ namespace VidPackBackEnd.api
 
         public SessionController()
         {
-            ThumbnailStorageUrl = "https://somedomain/"; 
+            ThumbnailStorageUrl = ""; 
         }
 
         // GET api/session
