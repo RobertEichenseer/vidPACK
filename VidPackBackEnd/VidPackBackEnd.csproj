@@ -146,6 +146,7 @@
   <ItemGroup>
     <Compile Include="api\ActualSessionController.cs" />
     <Compile Include="api\NextSessionController.cs" />
+    <Compile Include="api\NotificationController.cs" />
     <Compile Include="api\SessionController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -168,6 +169,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="EDMX\ExistingSession.cs">
+      <DependentUpon>VidPack.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EDMX\Notification.cs">
       <DependentUpon>VidPack.tt</DependentUpon>
     </Compile>
     <Compile Include="EDMX\VidPack.Context.cs">

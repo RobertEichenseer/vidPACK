@@ -67,6 +67,12 @@
 
     </Page.Resources>
 
+    <Page.BottomAppBar>
+        <AppBar BorderBrush="Black">
+            <Button x:ConnectionId='2' Style="{StaticResource EditAppBarButtonStyle}" AutomationProperties.Name="Notification"                              />
+        </AppBar>
+    </Page.BottomAppBar>
+
     <Grid x:Name="grdMain" Style="{StaticResource LayoutRootStyle}" DataContext="{Binding Source={StaticResource viewModel}}" >
         <Grid.Background>
             <SolidColorBrush Color="CadetBlue" />
@@ -88,7 +94,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:ConnectionId='5' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+            <Button x:ConnectionId='6' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
         <!-- /Header -->
@@ -127,7 +133,7 @@
                     <!-- Next Session -->
                     <Frame x:Name="frmNextSession" Width="500" Margin="20,20,20,40">
                         <StackPanel Orientation="Vertical">
-                            <TextBlock x:ConnectionId='4' Text="Save the date" Style="{StaticResource GroupHeaderTextStyle}" Margin="10"                          />
+                            <TextBlock x:ConnectionId='5' Text="Save the date" Style="{StaticResource GroupHeaderTextStyle}" Margin="10"                          />
                             <Grid Margin="10,5,0,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="490" />
@@ -158,7 +164,7 @@
                     <Frame x:Name="frmPastSession" Width="600" Margin="20,20,20,40">
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="Past Sessions" Style="{StaticResource GroupHeaderTextStyle}" Margin="10" />
-                            <GridView x:ConnectionId='3' ItemsSource="{Binding Path=Sessions}" ItemTemplate="{StaticResource DataTemplateSession}"                                                 />
+                            <GridView x:ConnectionId='4' ItemsSource="{Binding Path=Sessions}" ItemTemplate="{StaticResource DataTemplateSession}"                                                 />
                         </StackPanel>
                     </Frame>
                     <!-- /Past Sessions -->
@@ -170,7 +176,7 @@
                     <!-- Snap View -->
                     <Frame x:Name="frmSnapView" Width="300" Margin="10,20,10,40" Visibility="Collapsed">
                         <StackPanel Orientation="Vertical">
-                            <GridView x:ConnectionId='2' ItemsSource="{Binding Path=Sessions}" ItemTemplate="{StaticResource DataTemplateSessionSnapView}"                                                 />
+                            <GridView x:ConnectionId='3' ItemsSource="{Binding Path=Sessions}" ItemTemplate="{StaticResource DataTemplateSessionSnapView}"                                                 />
                         </StackPanel>
                     </Frame>
                     <!-- /Snap View -->

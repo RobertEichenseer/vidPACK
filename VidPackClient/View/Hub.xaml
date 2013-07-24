@@ -67,6 +67,12 @@
 
     </Page.Resources>
 
+    <Page.BottomAppBar>
+        <AppBar BorderBrush="Black">
+            <Button Style="{StaticResource EditAppBarButtonStyle}" AutomationProperties.Name="Notification" Tapped="Notification_Tapped" />
+        </AppBar>
+    </Page.BottomAppBar>
+
     <Grid x:Name="grdMain" Style="{StaticResource LayoutRootStyle}" DataContext="{Binding Source={StaticResource viewModel}}" >
         <Grid.Background>
             <SolidColorBrush Color="CadetBlue" />

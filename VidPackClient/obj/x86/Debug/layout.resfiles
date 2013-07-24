@@ -10,6 +10,7 @@ Assets\StoreLogo.png
 App.xaml
 Common\StandardStyles.xaml
 View\Hub.xaml
+View\Notification.xaml
 View\PrivacyPolicy.xaml
 View\SessionDetail.xaml
 View\Settings.xaml

@@ -145,6 +145,9 @@
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\Hub.xaml">
       <PackagePath>View\Hub.xaml</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\Notification.xaml">
+      <PackagePath>View\Notification.xaml</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\PrivacyPolicy.xaml">
       <PackagePath>View\PrivacyPolicy.xaml</PackagePath>
     </AppxPackagedFile>

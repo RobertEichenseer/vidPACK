@@ -7,6 +7,7 @@
     <Schema Namespace="VidPackModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="VidPackModelStoreContainer">
           <EntitySet Name="ExistingSession" EntityType="VidPackModel.Store.ExistingSession" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Notification" EntityType="VidPackModel.Store.Notification" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="ExistingSession">
           <Key>
@@ -23,12 +24,20 @@
           <Property Name="IsActualSession" Type="int" />
           <Property Name="IsNextSession" Type="int" />
         </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NotificationTag" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="VidPackModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="VidPackEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="ExistingSession" EntityType="VidPackModel.ExistingSession" />
+          <EntitySet Name="Notification" EntityType="VidPackModel.Notification" />
         </EntityContainer>
         <EntityType Name="ExistingSession">
           <Key>
@@ -44,6 +53,13 @@
           <Property Type="String" Name="SessionThumbnailUri" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="IsActualSession" />
           <Property Type="Int32" Name="IsNextSession" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="NotificationTag" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -63,6 +79,14 @@
                 <ScalarProperty Name="SessionDate" ColumnName="SessionDate" />
                 <ScalarProperty Name="SessionSubTitle" ColumnName="SessionSubTitle" />
                 <ScalarProperty Name="SessionTitle" ColumnName="SessionTitle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notification">
+            <EntityTypeMapping TypeName="VidPackModel.Notification">
+              <MappingFragment StoreEntitySet="Notification">
+                <ScalarProperty Name="NotificationTag" ColumnName="NotificationTag" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

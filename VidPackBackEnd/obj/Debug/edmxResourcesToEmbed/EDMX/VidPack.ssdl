@@ -2,6 +2,7 @@
 <Schema Namespace="VidPackModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="VidPackModelStoreContainer">
     <EntitySet Name="ExistingSession" EntityType="VidPackModel.Store.ExistingSession" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Notification" EntityType="VidPackModel.Store.Notification" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="ExistingSession">
     <Key>
@@ -17,5 +18,12 @@
     <Property Name="SessionThumbnailUri" Type="nvarchar" MaxLength="255" />
     <Property Name="IsActualSession" Type="int" />
     <Property Name="IsNextSession" Type="int" />
+  </EntityType>
+  <EntityType Name="Notification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NotificationTag" Type="nvarchar" Nullable="false" MaxLength="50" />
   </EntityType>
 </Schema>

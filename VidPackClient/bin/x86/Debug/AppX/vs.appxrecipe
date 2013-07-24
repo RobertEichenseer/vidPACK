@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-19T09:19:45.841</Modified>
+      <Modified>2013-07-24T04:43:57.103</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.exe">
       <PackagePath>VidPackClient.exe</PackagePath>
-      <Modified>2013-07-19T09:04:26.697</Modified>
+      <Modified>2013-07-24T04:43:54.955</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.pdb">
       <PackagePath>VidPackClient.pdb</PackagePath>
-      <Modified>2013-07-19T09:04:26.659</Modified>
+      <Modified>2013-07-24T04:43:54.926</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\References\CommonConfiguration\x86\Microsoft.AdaptiveStreaming.Analytics.winmd">
       <PackagePath>Microsoft.AdaptiveStreaming.Analytics.winmd</PackagePath>
@@ -86,7 +86,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackModel\bin\Debug\VidPackModel.dll">
       <PackagePath>VidPackModel.dll</PackagePath>
-      <Modified>2013-07-19T08:22:58.941</Modified>
+      <Modified>2013-07-24T04:40:57.571</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Adaptive\1.8.0.5\References\CommonConfiguration\x86\Microsoft.PlayerFramework.Adaptive.xml">
       <PackagePath>Microsoft.PlayerFramework.Adaptive.xml</PackagePath>
@@ -114,7 +114,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackModel\bin\Debug\VidPackModel.pdb">
       <PackagePath>VidPackModel.pdb</PackagePath>
-      <Modified>2013-07-19T08:22:58.919</Modified>
+      <Modified>2013-07-24T04:40:57.544</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\EntertainmentTheme.xaml">
       <PackagePath>Microsoft.PlayerFramework\Themes\EntertainmentTheme.xaml</PackagePath>
@@ -192,7 +192,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\Hub.xaml">
       <PackagePath>View\Hub.xaml</PackagePath>
-      <Modified>2013-07-19T08:23:23.478</Modified>
+      <Modified>2013-07-24T04:43:52.444</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\Notification.xaml">
+      <PackagePath>View\Notification.xaml</PackagePath>
+      <Modified>2013-07-24T04:42:06.727</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\PrivacyPolicy.xaml">
       <PackagePath>View\PrivacyPolicy.xaml</PackagePath>
@@ -212,7 +216,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-07-19T09:19:44.213</Modified>
+      <Modified>2013-07-24T04:43:55.200</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
