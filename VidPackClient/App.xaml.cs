@@ -17,6 +17,11 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Networking.PushNotifications;
+using Microsoft.WindowsAzure.Messaging;
+using VidPackClient.ViewModel;
+using VidPackClient.Bl;
+
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
@@ -27,6 +32,13 @@ namespace VidPackClient
     /// </summary>
     sealed partial class App : Application
     {
+
+        //Define Notification Communication
+        public static NotificationHub _NotificationHub = null;
+        public static string _ChannelUri = ""; 
+        //Define BL
+        public static ICommonBl _Bl = new CommonBl_RestWebService();
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -102,6 +114,22 @@ namespace VidPackClient
             Window.Current.Activate();
 
             SettingsPane.GetForCurrentView().CommandsRequested += App_CommandsRequested;
+
+            //Register NotificationHub
+            RegisterWithNotificationHub();
+        }
+
+        private async void RegisterWithNotificationHub()
+        {
+            _NotificationHub = new NotificationHub("vidpack", "Endpoint=sb://vidpack-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=p2N5fXEtJUJWohAgTWRUahBFYJWkSswH1GMogxpNP2Y=");
+            var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
+            _ChannelUri = channel.Uri; 
+
+            NotificationViewModel notificationViewModel = new NotificationViewModel(App._Bl);
+            List<string> subscribedNotification = notificationViewModel.LoadSubscribedNotificationsLocal();
+
+            await _NotificationHub.RegisterNativeAsync(_ChannelUri, subscribedNotification); 
+            
         }
 
         /// <summary>

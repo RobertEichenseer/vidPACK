@@ -8,12 +8,28 @@
     xmlns:common="using:VidPackClient.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:localVM="using:VidPackClient.ViewModel"
     mc:Ignorable="d">
 
     <Page.Resources>
+        <x:String x:Key="AppName">VidPack; Notifications</x:String>
+        <localVM:NotificationViewModel x:Key="viewModel" />
 
-        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">My Application</x:String>
+        <DataTemplate x:Key="DataTemplateNotification">
+            <Grid Width="280">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" 
+                           Text="{Binding NotificationTag}" Style="{StaticResource BasicTextStyle}" 
+                           Margin="5,0,0,5"/>
+                <CheckBox x:ConnectionId='1' Grid.Column="1" Grid.Row="0" Tag="{Binding NotificationTag}" IsChecked="{Binding IsSubscribed, Mode=TwoWay}"                         />
+            </Grid>
+        </DataTemplate>
+
+
     </Page.Resources>
 
     <!--
@@ -21,20 +37,32 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid Style="{StaticResource LayoutRootStyle}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="140"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
+    <Grid x:Name="grdMain" Style="{StaticResource LayoutRootStyle}" DataContext="{Binding Source={StaticResource viewModel}}">
+        <Grid.Background>
+            <SolidColorBrush Color="CadetBlue" />
+        </Grid.Background>
+        
         <!-- Back button and page title -->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:ConnectionId='1' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="300" />
+            </Grid.RowDefinitions>
+            
+            <Button x:ConnectionId='2' x:Name="backButton" Grid.Row="0"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+            <TextBlock x:Name="pageTitle" Grid.Row="0" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
+            
+            <Frame Grid.Column="1" Grid.Row="1" Margin="20,20,20,20">
+                <StackPanel>
+                    <GridView ItemsSource="{Binding Path=Notifications}" ItemTemplate="{StaticResource DataTemplateNotification}" />
+                </StackPanel>
+            </Frame>
+            
+
         </Grid>
 
         <VisualStateManager.VisualStateGroups>

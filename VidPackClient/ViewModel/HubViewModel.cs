@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VidPackClient.BL;
+using VidPackClient.Bl;
 using VidPackClient.Common;
 using VidPackModel;
 using Windows.Storage;
@@ -89,16 +89,19 @@ namespace VidPackClient.ViewModel
         private void ReadConfigParameter()
         {
             ApplicationDataContainer applicationDataContainer = ApplicationData.Current.LocalSettings;
+
+           
             string webServiceUrl = applicationDataContainer.Values["webServiceUrl"] as string;
             if (String.IsNullOrEmpty(webServiceUrl))
             {
-                
                 webServiceUrl = "http://vidpack.azurewebsites.net/api/";
                 applicationDataContainer.Values["webServiceUrl"] = webServiceUrl;
-                
             }
-            //webServiceUrl = "http://localhost:19513/api/";
-            _bl.SetConfigPara(webServiceUrl); 
+            
+            webServiceUrl = "http://localhost:19513/api/";
+            _bl.SetConfigPara(new ClientConfig() { 
+                WebServiceUrl = webServiceUrl, 
+            }); 
         }
     }
 

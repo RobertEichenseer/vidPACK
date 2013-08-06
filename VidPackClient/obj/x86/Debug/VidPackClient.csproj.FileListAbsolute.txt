@@ -113,3 +113,6 @@ C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\PrivacyPolicy.xaml
 C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\Notification.g.i.cs
 C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\Notification.g.cs
 C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\View\Notification.xaml
+C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\Microsoft.WindowsAzure.Messaging.Managed.dll
+C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\Microsoft.WindowsAzure.Messaging.Managed.pri
+C:\Sourcen\VidPack\VidPackClient\obj\x86\Debug\Microsoft.WindowsAzure.Messaging.Managed.pri.xml

@@ -8,10 +8,13 @@ using VidPackModel;
 
 namespace VidPackClient.ViewModel
 {
-    class SessionDetailInputPara
+    public class NotificationInputPara
     {
         public ICommonBl Bl { get; set; }
-        public Session SelectedSession { get; set; }
 
+        public NotificationInputPara()
+        {
+
+        }
     }
 }

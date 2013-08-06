@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VidPackClient.BL;
+using VidPackClient.Bl;
 using VidPackClient.Common;
 using VidPackModel;
 

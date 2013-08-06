@@ -11,6 +11,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using VidPackModel;
+using VidPackClient.ViewModel; 
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -21,6 +23,8 @@ namespace VidPackClient.View
     /// </summary>
     public sealed partial class Notification : VidPackClient.Common.LayoutAwarePage
     {
+        NotificationViewModel _viewModel = null;
+
         public Notification()
         {
             this.InitializeComponent();
@@ -47,6 +51,24 @@ namespace VidPackClient.View
         /// <param name="pageState">An empty dictionary to be populated with serializable state.</param>
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            NotificationInputPara inputPara = (NotificationInputPara)e.Parameter;
+            _viewModel = new NotificationViewModel(inputPara.Bl);
+            grdMain.DataContext = _viewModel;
+
+            _viewModel.LoadNotifications(); 
+
+            base.OnNavigatedTo(e);
+        }
+
+ 
+        private void CheckBox_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            _viewModel.ProcessNotificationChange();
+  
         }
     }
 }

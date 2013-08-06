@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using VidPackModel;
 
-namespace VidPackClient.BL
+namespace VidPackClient.Bl
 {
     public interface ICommonBl
     {
-        void SetConfigPara(object configPara);
+        void SetConfigPara(ClientConfig clientConfig);
         Task<Session> LoadActualSession();
         Task<Session> LoadNextSession();
         Task<List<Session>> LoadPastSession();
+
+        Task<List<NotificationInfo>> LoadNotifications();
     }
 }

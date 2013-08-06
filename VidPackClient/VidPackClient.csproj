@@ -12,7 +12,8 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>VidPackClient_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>VidPackClient_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>916CC75324235D477134195C8D4141F5DCFEFCC5</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -113,7 +114,9 @@
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Converter\StringToUriConverter.cs" />
     <Compile Include="Converter\DateTimeConverter.cs" />
+    <Compile Include="ViewModel\NotificationInputPara.cs" />
     <Compile Include="ViewModel\HubViewModel.cs" />
+    <Compile Include="ViewModel\NotificationViewModel.cs" />
     <Compile Include="ViewModel\SessionDetailInputPara.cs" />
     <Compile Include="ViewModel\SessionDetailViewModel.cs" />
     <Compile Include="View\Hub.xaml.cs">
@@ -139,6 +142,7 @@
     </AppxManifest>
     <None Include="Assets\VidPack.bacpac" />
     <None Include="packages.config" />
+    <None Include="VidPackClient_StoreKey.pfx" />
     <None Include="VidPackClient_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +156,7 @@
     <Content Include="Assets\SplashScreen.scale-180.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Common\ReadMe.txt" />
+    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -221,6 +226,9 @@
   <ItemGroup>
     <Reference Include="Callisto">
       <HintPath>..\packages\Callisto.1.3.1\lib\winrt45\Callisto.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Messaging.Managed">
+      <HintPath>..\packages\WindowsAzure.Messaging.Managed.0.1.6.0\lib\netcore45\Microsoft.WindowsAzure.Messaging.Managed.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.dll</HintPath>

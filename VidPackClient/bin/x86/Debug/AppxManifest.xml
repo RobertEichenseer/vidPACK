@@ -7,10 +7,10 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="aa40d28d-d0ab-4efd-ab06-a0ee70f0cac2" Publisher="CN=robeich" Version="1.0.0.0" ProcessorArchitecture="x86" />
+  <Identity Name="4195RobertEichenseer.RobEichVidPack" Publisher="CN=4EF806E4-D82E-43C8-B0E3-D7E14EA1CAE9" Version="1.0.0.0" ProcessorArchitecture="x86" />
   <Properties>
-    <DisplayName>VidPackClient</DisplayName>
-    <PublisherDisplayName>robeich</PublisherDisplayName>
+    <DisplayName>RobEichVidPack</DisplayName>
+    <PublisherDisplayName>Robert Eichenseer</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -22,7 +22,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="VidPackClient.exe" EntryPoint="VidPackClient.App">
-      <VisualElements DisplayName="VidPackClient" Logo="assets\logo.png" SmallLogo="Assets\SmallLogo.png" Description="VidPackClient" ForegroundText="light" BackgroundColor="#464646">
+      <VisualElements DisplayName="RobEichVidPack" Logo="assets\logo.png" SmallLogo="Assets\SmallLogo.png" Description="VidPackClient" ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
         <DefaultTile ShowName="allLogos" />
         <SplashScreen Image="Assets\SplashScreen.png" />
       </VisualElements>

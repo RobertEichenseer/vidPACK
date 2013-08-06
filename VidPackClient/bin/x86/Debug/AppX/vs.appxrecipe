@@ -5,28 +5,28 @@
     <WindowsUser>robeich</WindowsUser>
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
-    <RegisteredManifestChecksum>22CDCAAAEA715EA969F232BCB036E819B495E5FA3D763B156A9B83B477757AE7</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>aa40d28d-d0ab-4efd-ab06-a0ee70f0cac2_1.0.0.0_x86__3c2me0befwq6t</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>aa40d28d-d0ab-4efd-ab06-a0ee70f0cac2_3c2me0befwq6t!App</RegisteredUserModeAppID>
-    <RegisteredPackageID>aa40d28d-d0ab-4efd-ab06-a0ee70f0cac2</RegisteredPackageID>
-    <RegisteredPackagePublisher>CN=robeich</RegisteredPackagePublisher>
+    <RegisteredManifestChecksum>E7D1C1B14A071FA97997F78D1F5B6F699448EB917D69AFE522C44EDC8DD78D4D</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>4195RobertEichenseer.RobEichVidPack_1.0.0.0_x86__f9yzzwaf9xyde</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>4195RobertEichenseer.RobEichVidPack_f9yzzwaf9xyde!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>4195RobertEichenseer.RobEichVidPack</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=4EF806E4-D82E-43C8-B0E3-D7E14EA1CAE9</RegisteredPackagePublisher>
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-07-24T04:43:57.103</Modified>
+      <Modified>2013-08-02T15:38:59.584</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.exe">
       <PackagePath>VidPackClient.exe</PackagePath>
-      <Modified>2013-07-24T04:43:54.955</Modified>
+      <Modified>2013-08-06T14:44:00.695</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.pdb">
       <PackagePath>VidPackClient.pdb</PackagePath>
-      <Modified>2013-07-24T04:43:54.926</Modified>
+      <Modified>2013-08-06T14:44:00.662</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\References\CommonConfiguration\x86\Microsoft.AdaptiveStreaming.Analytics.winmd">
       <PackagePath>Microsoft.AdaptiveStreaming.Analytics.winmd</PackagePath>
@@ -80,41 +80,21 @@
       <PackagePath>Callisto.dll</PackagePath>
       <Modified>2013-06-29T14:46:21.099</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\packages\WindowsAzure.Messaging.Managed.0.1.6.0\lib\netcore45\Microsoft.WindowsAzure.Messaging.Managed.dll">
+      <PackagePath>Microsoft.WindowsAzure.Messaging.Managed.dll</PackagePath>
+      <Modified>2013-08-02T15:34:19.553</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
       <Modified>2013-06-28T09:44:16.489</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackModel\bin\Debug\VidPackModel.dll">
       <PackagePath>VidPackModel.dll</PackagePath>
-      <Modified>2013-07-24T04:40:57.571</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Adaptive\1.8.0.5\References\CommonConfiguration\x86\Microsoft.PlayerFramework.Adaptive.xml">
-      <PackagePath>Microsoft.PlayerFramework.Adaptive.xml</PackagePath>
-      <Modified>2013-03-31T08:21:10.690</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Advertising\1.8.0.5\References\CommonConfiguration\neutral\Microsoft.PlayerFramework.Advertising.xml">
-      <PackagePath>Microsoft.PlayerFramework.Advertising.xml</PackagePath>
-      <Modified>2013-03-31T08:21:10.798</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\References\CommonConfiguration\neutral\Microsoft.PlayerFramework.Analytics.xml">
-      <PackagePath>Microsoft.PlayerFramework.Analytics.xml</PackagePath>
-      <Modified>2013-03-31T08:21:10.865</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.TimedText\1.8.0.5\References\CommonConfiguration\neutral\Microsoft.PlayerFramework.TimedText.xml">
-      <PackagePath>Microsoft.PlayerFramework.TimedText.xml</PackagePath>
-      <Modified>2013-03-31T08:21:10.720</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\1.8.0.5\References\CommonConfiguration\neutral\Microsoft.PlayerFramework.xml">
-      <PackagePath>Microsoft.PlayerFramework.xml</PackagePath>
-      <Modified>2013-03-31T08:21:10.992</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Sourcen\VidPack\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.xml">
-      <PackagePath>Newtonsoft.Json.xml</PackagePath>
-      <Modified>2013-06-28T09:44:16.498</Modified>
+      <Modified>2013-08-02T14:59:52.715</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackModel\bin\Debug\VidPackModel.pdb">
       <PackagePath>VidPackModel.pdb</PackagePath>
-      <Modified>2013-07-24T04:40:57.544</Modified>
+      <Modified>2013-08-02T14:59:52.692</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\EntertainmentTheme.xaml">
       <PackagePath>Microsoft.PlayerFramework\Themes\EntertainmentTheme.xaml</PackagePath>
@@ -196,7 +176,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\Notification.xaml">
       <PackagePath>View\Notification.xaml</PackagePath>
-      <Modified>2013-07-24T04:42:06.727</Modified>
+      <Modified>2013-08-02T14:05:34.416</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\PrivacyPolicy.xaml">
       <PackagePath>View\PrivacyPolicy.xaml</PackagePath>
@@ -216,7 +196,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-07-24T04:43:55.200</Modified>
+      <Modified>2013-08-02T15:38:57.500</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

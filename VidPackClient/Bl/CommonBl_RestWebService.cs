@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
-using VidPackClient.BL;
+using VidPackClient.Bl;
 using VidPackModel;
 using Windows.UI.Xaml.Media.Imaging;
 
@@ -19,9 +19,9 @@ namespace VidPackClient.Bl
         public Uri _webServiceUri = new Uri("http://localhost:19513/api/");
         //public Uri _webServiceUri;  //= new Uri("http://vidpack.azurewebsites.net/api/");
 
-        public void SetConfigPara(object configPara)
+        public void SetConfigPara(ClientConfig clientConfig)
         {
-            _webServiceUri = new Uri((string)configPara); 
+            _webServiceUri = new Uri(clientConfig.WebServiceUrl); 
         }
 
         public async Task<Session> LoadActualSession()
@@ -71,6 +71,21 @@ namespace VidPackClient.Bl
             return returnValue;
          }
 
+        public async Task<List<NotificationInfo>> LoadNotifications()
+        {
+            string serviceEndpoint = "notification";
+            List<NotificationInfo> returnValue = new List<NotificationInfo>();
+
+            using (HttpClient httpClient = new HttpClient())
+            {
+                Uri uri = new Uri(string.Format("{0}{1}", _webServiceUri, serviceEndpoint));
+                string jsonResult = await httpClient.GetStringAsync(uri);
+                returnValue = Deserialize<List<NotificationInfo>>(jsonResult);
+            }
+
+            return returnValue;
+        }
+
         //********************************************************************************************
         //* JSON Helper
         //********************************************************************************************
@@ -83,7 +98,6 @@ namespace VidPackClient.Bl
                 return (T)serializer.ReadObject(memoryStream);
             }
         }
-
 
     }
 }

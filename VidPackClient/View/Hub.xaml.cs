@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using VidPackClient.Bl;
-using VidPackClient.BL;
 using VidPackClient.View;
 using VidPackClient.ViewModel;
 using VidPackModel;
@@ -29,7 +28,8 @@ namespace VidPackClient
     public sealed partial class Hub : VidPackClient.Common.LayoutAwarePage
     {
 
-        HubViewModel _viewModel = new HubViewModel(new CommonBl_RestWebService()); 
+        //HubViewModel _viewModel = new HubViewModel(new CommonBl_RestWebService()); 
+        HubViewModel _viewModel = new HubViewModel(App._Bl); 
 
         public Hub()
         {
@@ -84,8 +84,7 @@ namespace VidPackClient
 
         private void Notification_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Notification), null); 
-
+            Frame.Navigate(typeof(Notification), new NotificationInputPara() { Bl = _viewModel._bl }); 
         }
     }
 }

@@ -33,5 +33,11 @@ namespace VidPackModel
     public class NotificationInfo
     {
         public string NotificationTag { get; set; }
+        public bool IsSubscribed { get; set; }
+    }
+
+    public class ClientConfig
+    {
+        public string WebServiceUrl { get; set; }
     }
 }
