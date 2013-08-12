@@ -2,6 +2,7 @@
 <Schema Namespace="VidPackModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="VidPackEntities" p1:LazyLoadingEnabled="true">
     <EntitySet Name="ExistingSession" EntityType="VidPackModel.ExistingSession" />
+    <EntitySet Name="Notification" EntityType="VidPackModel.Notification" />
   </EntityContainer>
   <EntityType Name="ExistingSession">
     <Key>
@@ -17,5 +18,12 @@
     <Property Type="String" Name="SessionThumbnailUri" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Type="Int32" Name="IsActualSession" />
     <Property Type="Int32" Name="IsNextSession" />
+  </EntityType>
+  <EntityType Name="Notification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="NotificationTag" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

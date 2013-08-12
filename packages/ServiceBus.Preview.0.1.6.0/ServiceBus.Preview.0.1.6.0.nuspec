@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ServiceBus.Preview</id>
+    <version>0.1.6.0</version>
+    <title>Service Bus preview features</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://go.microsoft.com/fwlink/?LinkId=218949</licenseUrl>
+    <projectUrl>http://go.microsoft.com/fwlink/?LinkID=271460</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>This package works with Windows Azure Service Bus and provides access to preview features such as partitioned queues and topics. It adds Microsoft.ServiceBus.Preview.dll along with related configuration files to your project. Please note that this package requires .Net Framework 4 Full Profile.</description>
+    <summary>Provides support for Notification Hubs and AMQP 1.0 preview in Azure Service Bus.</summary>
+    <releaseNotes />
+    <copyright />
+    <language>en-US</language>
+    <tags>ServiceBus Service Bus Preview Microsoft Windows Azure AMQP OASIS PUSH Notifications IOS Store Toast Tile Badge partitioned</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.ServiceModel" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="System.Runtime.Serialization" targetFramework=".NETFramework4.0" />
+    </frameworkAssemblies>
+    <references>
+      <reference file="Microsoft.ServiceBus.Preview.dll" />
+    </references>
+  </metadata>
+</package>

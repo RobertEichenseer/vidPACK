@@ -4,8 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3b99315b14f548e8978def19139010f1" Name="Diagram1">
-        <EntityTypeShape EntityType="VidPackModel.ExistingSession" Width="1.5" PointX="2.3594053230990681" PointY="29.138602702477296" />
+      <Diagram DiagramId="3b99315b14f548e8978def19139010f1" Name="Diagram1" ZoomLevel="113">
+        <EntityTypeShape EntityType="VidPackModel.ExistingSession" Width="1.5" PointX="4.875" PointY="0.625" />
+        <EntityTypeShape EntityType="VidPackModel.Notification" Width="1.5" PointX="1.875" PointY="0.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

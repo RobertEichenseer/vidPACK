@@ -22,11 +22,11 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.exe">
       <PackagePath>VidPackClient.exe</PackagePath>
-      <Modified>2013-08-06T14:44:00.695</Modified>
+      <Modified>2013-08-11T07:05:51.752</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.pdb">
       <PackagePath>VidPackClient.pdb</PackagePath>
-      <Modified>2013-08-06T14:44:00.662</Modified>
+      <Modified>2013-08-11T07:05:51.721</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\References\CommonConfiguration\x86\Microsoft.AdaptiveStreaming.Analytics.winmd">
       <PackagePath>Microsoft.AdaptiveStreaming.Analytics.winmd</PackagePath>
