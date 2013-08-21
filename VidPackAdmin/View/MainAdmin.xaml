@@ -1,0 +1,74 @@
+﻿<Window x:Class="VidPackAdmin.View.MainAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localVM="clr-namespace:VidPackAdmin.ViewModel"
+        Title="MainAdmin" Height="500" Width="600">
+    <Grid x:Name="grdMain" >
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Ribbon x:Name="ribMain" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" SelectedIndex="{Binding SelectedAdminAreaIndex, Mode=TwoWay}">
+            <RibbonTab Header="Notification" Selector.IsSelected="true">
+                <RibbonGroup Width="580" >
+                    <StackPanel Orientation="Horizontal" >
+                        <RibbonButton Label="Send Notification" LargeImageSource="..\Images\Notification.png" IsEnabled="{Binding SendNotificatonIsEnabled}" />
+                        <Grid Margin="10,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="130" />
+                                <ColumnDefinition Width="200" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="30" />    
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom">Notification Type</Label>
+                            <ComboBox Grid.Column="1" Grid.Row="0" Height="20" VerticalAlignment="Bottom" ItemsSource="{Binding NotificationType}" DisplayMemberPath="Name">
+                            </ComboBox>
+
+                            <Label Grid.Column="0" Grid.Row="1">Notification Tag</Label>
+                            <ComboBox Grid.Column="1" Grid.Row="1" Height="20" ItemsSource="{Binding NotificationTag}" DisplayMemberPath="NotificationTag" />
+                        </Grid>
+                    </StackPanel>
+                </RibbonGroup>
+            </RibbonTab>
+
+            <RibbonTab Header="Session">
+                <RibbonGroup Margin="0,1" Width="480" >
+                    <StackPanel Orientation="Horizontal" >
+                        
+                    </StackPanel>
+                </RibbonGroup>
+            </RibbonTab>
+
+            <RibbonTab Header="Video">
+                <RibbonGroup Margin="0,1" Width="480" >
+                    <StackPanel Orientation="Horizontal" >
+                        
+                    </StackPanel>
+                </RibbonGroup>
+            </RibbonTab>
+
+            <RibbonTab Header="Settings">
+                <RibbonGroup Margin="0,1" Width="370">
+                    <RibbonTextBox Label="Image Name"  Text="Hallo" TextBoxWidth="170" IsEnabled="True"/>
+                </RibbonGroup>
+                <RibbonGroup Margin="0,1" Width="300">
+                    <ScrollViewer>
+                        <StackPanel Orientation="Vertical" >
+                        </StackPanel>
+                    </ScrollViewer>
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        
+        <Border Grid.Row="1" x:Name="ContentHost">
+        </Border>
+    </Grid>
+</Window>

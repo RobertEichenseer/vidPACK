@@ -13,6 +13,9 @@ namespace VidPackAdmin.Bl
         Task<bool> SendToastNotificationAsync(string toast, string xmlTemplate, string notificationTag  );
         Task<bool> SendTileNotificationAsync(TileNotification tileUpdate, string xmlTemplate, string notificationTag );
 
-        Task<List<NotificationInfo>> ReadNotificationTagAsync();
+        Task<List<NotificationInfo>> LoadNotificationTagAsync();
+
+        LocalConfigurationInfo ReadLocalConfiguration();
+
     }
 }

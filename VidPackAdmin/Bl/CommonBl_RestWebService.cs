@@ -1,12 +1,14 @@
 ﻿using Microsoft.ServiceBus.Notifications;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Runtime.Serialization.Json;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using VidPackAdmin.ViewModel;
 using VidPackModel;
@@ -44,7 +46,7 @@ namespace VidPackAdmin.Bl
         }
 
 
-        public async Task<List<NotificationInfo>> ReadNotificationTagAsync()
+        public async Task<List<NotificationInfo>> LoadNotificationTagAsync()
         {
             string serviceEndpoint = "notification";
             List<NotificationInfo> returnValue = new List<NotificationInfo>();
@@ -60,6 +62,17 @@ namespace VidPackAdmin.Bl
 
         }
 
+        public LocalConfigurationInfo ReadLocalConfiguration()
+        {
+            LocalConfigurationInfo localConfiguration = new LocalConfigurationInfo()
+            {
+                BackendUrl = ConfigurationManager.AppSettings.Get("BackendUrl"),
+                NotificationHub_ConnectionString = ConfigurationManager.AppSettings.Get("NotificationHub_ConnectionString"),
+                NotificationHub_HubPath = ConfigurationManager.AppSettings.Get("NotificationHub_HubPath"),
+            };
+            return localConfiguration; 
+        }
+
         //********************************************************************************************
         //* JSON Helper
         //********************************************************************************************
@@ -72,5 +85,8 @@ namespace VidPackAdmin.Bl
                 return (T)serializer.ReadObject(memoryStream);
             }
         }
+
+
+        
     }
 }

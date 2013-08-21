@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace VidPackAdmin.ViewModel
 {
+    public class LocalConfigurationInfo
+    {
+        public string BackendUrl { get; set; }
+        public string NotificationHub_ConnectionString { get; set; }
+        public string NotificationHub_HubPath { get; set; }
+    }
+
+
     public class NotificationTemplate : BaseViewModel
     {
         private string _name = "";

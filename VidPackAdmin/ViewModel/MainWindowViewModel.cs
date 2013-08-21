@@ -71,7 +71,7 @@ namespace VidPackAdmin.ViewModel
         private async void CreateReadTemplateData()
         {
             if (Bl != null)
-                NotificationTag = new ObservableCollection<NotificationInfo>(await Bl.ReadNotificationTagAsync());
+                NotificationTag = new ObservableCollection<NotificationInfo>(await Bl.LoadNotificationTagAsync());
             else
             {
                 NotificationTag.Add(new NotificationInfo() { NotificationTag = "UserGroupAlert" });
