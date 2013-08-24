@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Apex.MVVM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,23 +25,25 @@ namespace VidPackAdmin.View.Controls
     public partial class Setting : UserControl 
     {
         ICommonBl _bl;
-        SettingViewModel _viewModel = null; 
+        SettingViewModel _viewModel = null;
+        MainAdminViewModel _mainAdminViewModel;
 
-        public Setting(ICommonBl bl)
+        
+        internal Setting(ICommonBl bl, MainAdminViewModel mainAdminViewModel)
         {
             InitializeComponent();
 
             _bl = bl;
-            _viewModel = new SettingViewModel(_bl);
+            _mainAdminViewModel = mainAdminViewModel;
+            _viewModel = new SettingViewModel(_bl, _mainAdminViewModel);
 
             
-
             grdMain.DataContext = _viewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SettingValue_KeyDown(object sender, KeyEventArgs e)
         {
-            var x = ""; 
+            _mainAdminViewModel.SaveSettingIsEnabled = true; 
         }
     }
 }

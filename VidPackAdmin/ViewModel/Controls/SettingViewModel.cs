@@ -4,34 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VidPackAdmin.Bl;
-using System.Configuration; 
+using System.Configuration;
+using Apex.MVVM; 
 
 namespace VidPackAdmin.ViewModel
 {
     class SettingViewModel : BaseViewModel
     {
-        ICommonBl _bl; 
+        ICommonBl _bl;
+        MainAdminViewModel _mainAdminViewModel;
 
-        public SettingViewModel(ICommonBl bl)
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="bl"> Business Logic</param>
+        /// <param name="mainAdminViewModel"></param>
+        public SettingViewModel(ICommonBl bl, MainAdminViewModel mainAdminViewModel)
         {
             _bl = bl;
-            ReadLocalConfiguration(); 
+            _mainAdminViewModel = mainAdminViewModel;
+
         }
 
-        private LocalConfigurationInfo _localConfiguration;
+        /// <summary>
+        /// View Data
+        /// </summary>
         public LocalConfigurationInfo LocalConfiguration
         {
-            get { return _localConfiguration; }
-            set { _localConfiguration = value; OnPropertyChanged("LocalConfiguration"); }
+            get { return App.LocalConfiguration; }
+            set { App.LocalConfiguration = value; OnPropertyChanged("LocalConfiguration"); }
         }
 
-
-        private void ReadLocalConfiguration()
-        {
-            LocalConfiguration = _bl.ReadLocalConfiguration();
-
-            if (String.IsNullOrEmpty(LocalConfiguration.BackendUrl))
-                LocalConfiguration.BackendUrl = "http://vidpack.azurewebsites.net"; 
-        }
     }
 }

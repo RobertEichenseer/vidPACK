@@ -12,17 +12,36 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VidPackAdmin.Bl;
+using VidPackAdmin.ViewModel;
 
 namespace VidPackAdmin.View.Controls
 {
+
     /// <summary>
     /// Interaction logic for Notification.xaml
     /// </summary>
     public partial class Notification : UserControl   
     {
-        public Notification()
+        ICommonBl _bl;
+        NotificationViewModel _viewModel = null;
+        MainAdminViewModel _mainAdminViewModel;
+
+        public Notification(ICommonBl bl, MainAdminViewModel mainAdminViewModel)
         {
             InitializeComponent();
+
+            _bl = bl;
+            _mainAdminViewModel = mainAdminViewModel;
+
+            _viewModel = new NotificationViewModel(_bl, _mainAdminViewModel);
+            App.AddViewModel("NotificationViewModel", _viewModel); 
+
+            grdMain.DataContext = _viewModel;
+
         }
+
+
+
     }
 }

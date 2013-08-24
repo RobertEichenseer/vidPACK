@@ -13,6 +13,43 @@ namespace VidPackAdmin.ViewModel
         public string NotificationHub_HubPath { get; set; }
     }
 
+    public class NotificationMessageInfo : BaseViewModel
+    {
+        private string _headline = ""; 
+        public string Headline {
+            get { return _headline; }
+            set { _headline = value; OnPropertyChanged("Headline"); } 
+        }
+
+        private string _message1 = "";
+        public string Message1
+        {
+            get { return _message1; }
+            set { _message1 = value; OnPropertyChanged("Message1"); }
+        }
+
+        private string _message2 = "";
+        public string Message2
+        {
+            get { return _message2; }
+            set { _message2 = value; OnPropertyChanged("Message2"); }
+        }
+
+        private string _message3 = "";
+        public string Message3
+        {
+            get { return _message3; }
+            set { _message3 = value; OnPropertyChanged("Message3"); }
+        }
+
+        private string _message4 = "";
+        public string Message4
+        {
+            get { return _message4; }
+            set { _message4 = value; OnPropertyChanged("Message4"); }
+        }
+    }
+
 
     public class NotificationTemplate : BaseViewModel
     {

@@ -16,6 +16,6 @@ namespace VidPackAdmin.Bl
         Task<List<NotificationInfo>> LoadNotificationTagAsync();
 
         LocalConfigurationInfo ReadLocalConfiguration();
-
+        void SaveLocalConfiguration(LocalConfigurationInfo localConfigurationInfo);
     }
 }

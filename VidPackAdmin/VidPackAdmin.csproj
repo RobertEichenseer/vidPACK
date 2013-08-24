@@ -149,7 +149,9 @@
       <Name>VidPackModel</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Save.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Notification.png" />
   </ItemGroup>

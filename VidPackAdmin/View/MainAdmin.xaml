@@ -17,7 +17,7 @@
             <RibbonTab Header="Notification" Selector.IsSelected="true">
                 <RibbonGroup Width="580" >
                     <StackPanel Orientation="Horizontal" >
-                        <RibbonButton Label="Send Notification" LargeImageSource="..\Images\Notification.png" IsEnabled="{Binding SendNotificatonIsEnabled}" />
+                        <RibbonButton Label="Send Notification" LargeImageSource="..\Images\Notification.png" IsEnabled="{Binding SendNotificationIsEnabled}" Command="{Binding SendNotification}" />
                         <Grid Margin="10,0,0,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="130" />
@@ -29,11 +29,11 @@
                             </Grid.RowDefinitions>
 
                             <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom">Notification Type</Label>
-                            <ComboBox Grid.Column="1" Grid.Row="0" Height="20" VerticalAlignment="Bottom" ItemsSource="{Binding NotificationType}" DisplayMemberPath="Name">
+                            <ComboBox Grid.Column="1" Grid.Row="0" Height="20" VerticalAlignment="Bottom" ItemsSource="{Binding NotificationType}" DisplayMemberPath="Name" SelectedIndex="{Binding NotificationTypeSelectedIndex}">
                             </ComboBox>
 
                             <Label Grid.Column="0" Grid.Row="1">Notification Tag</Label>
-                            <ComboBox Grid.Column="1" Grid.Row="1" Height="20" ItemsSource="{Binding NotificationTag}" DisplayMemberPath="NotificationTag" />
+                            <ComboBox Grid.Column="1" Grid.Row="1" Height="20" ItemsSource="{Binding NotificationTag}" DisplayMemberPath="NotificationTag" SelectedIndex="{Binding NotificationTagSelectedIndex}"/>
                         </Grid>
                     </StackPanel>
                 </RibbonGroup>
@@ -57,13 +57,7 @@
 
             <RibbonTab Header="Settings">
                 <RibbonGroup Margin="0,1" Width="370">
-                    <RibbonTextBox Label="Image Name"  Text="Hallo" TextBoxWidth="170" IsEnabled="True"/>
-                </RibbonGroup>
-                <RibbonGroup Margin="0,1" Width="300">
-                    <ScrollViewer>
-                        <StackPanel Orientation="Vertical" >
-                        </StackPanel>
-                    </ScrollViewer>
+                    <RibbonButton Label="Save Setting" LargeImageSource="..\Images\Save.png" IsEnabled="{Binding SaveSettingIsEnabled}" Command="{Binding SaveSetting}" />
                 </RibbonGroup>
             </RibbonTab>
         </Ribbon>

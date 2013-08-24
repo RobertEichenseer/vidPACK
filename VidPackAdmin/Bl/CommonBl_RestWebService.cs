@@ -31,10 +31,10 @@ namespace VidPackAdmin.Bl
 
         public async Task<bool> SendToastNotificationAsync(string toast, string xmlTemplate, string notificationTag)
         {
-            string payLoad = String.Format(xmlTemplate, toast); 
+            string payLoad = String.Format(xmlTemplate, toast);
             await _NotificationHubClient.SendWindowsNativeNotificationAsync(payLoad, notificationTag);
 
-            return true; 
+            return true;
         }
 
         public async Task<bool> SendTileNotificationAsync(TileNotification tileUpdate, string xmlTemplate, string notificationTag)
@@ -70,8 +70,24 @@ namespace VidPackAdmin.Bl
                 NotificationHub_ConnectionString = ConfigurationManager.AppSettings.Get("NotificationHub_ConnectionString"),
                 NotificationHub_HubPath = ConfigurationManager.AppSettings.Get("NotificationHub_HubPath"),
             };
-            return localConfiguration; 
+            return localConfiguration;
         }
+
+        public void SaveLocalConfiguration(LocalConfigurationInfo localConfiguration)
+        {
+            Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            AppSettingsSection appSettingsSection = configuration.AppSettings;
+
+            appSettingsSection.Settings.Remove("BackendUrl"); 
+            appSettingsSection.Settings.Add("BackendUrl", localConfiguration.BackendUrl);
+            appSettingsSection.Settings.Remove("NotificationHub_ConnectionString"); 
+            appSettingsSection.Settings.Add("NotificationHub_ConnectionString", localConfiguration.NotificationHub_ConnectionString);
+            appSettingsSection.Settings.Remove("NotificationHub_HubPath"); 
+            appSettingsSection.Settings.Add("NotificationHub_HubPath", localConfiguration.NotificationHub_HubPath);
+
+            configuration.Save(ConfigurationSaveMode.Modified);
+        }
+
 
         //********************************************************************************************
         //* JSON Helper
@@ -86,7 +102,5 @@ namespace VidPackAdmin.Bl
             }
         }
 
-
-        
     }
 }

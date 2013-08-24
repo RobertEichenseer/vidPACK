@@ -4,26 +4,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VidPackAdmin.Bl;
 
 namespace VidPackAdmin.ViewModel
 {
     class NotificationViewModel : BaseViewModel 
     {
-        private Command _changeView;
-        public Command ChangeView
+        
+        ICommonBl _bl;
+        MainAdminViewModel _mainAdminViewModel;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="bl"> Business Logic</param>
+        /// <param name="mainAdminViewModel"></param>
+        public NotificationViewModel(ICommonBl bl, MainAdminViewModel mainAdminViewModel)
         {
-            get { return _changeView;  }
+            _bl = bl;
+            _mainAdminViewModel = mainAdminViewModel;
         }
 
-        public NotificationViewModel()
+        private NotificationMessageInfo _notificationMessage = new NotificationMessageInfo();
+        public NotificationMessageInfo NotificationMessage
         {
-            _changeView = new Command(ShowAdminArea);
+            get { return _notificationMessage; }
+            set { _notificationMessage = value; OnPropertyChanged("NotificationMessage"); }
         }
 
 
-        public void ShowAdminArea()
+        private bool _messageIsEnabled = false;
+        public bool MessageIsEnabled
         {
-            var x = 1; 
+            get { return _messageIsEnabled; }
+            set { _messageIsEnabled = value; OnPropertyChanged("MessageIsEnabled"); }
+        }
+
+        internal void SendNotification(NotificationTemplate notificationTemplate, string notificationTag)
+        {
+            var x = "";
         }
     }
 }

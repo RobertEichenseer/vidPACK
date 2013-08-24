@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Apex.MVVM;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -11,7 +12,7 @@ using VidPackModel;
 
 namespace VidPackAdmin.ViewModel
 {
-    internal class MainAdminViewModel : BaseViewModel
+    public class MainAdminViewModel : BaseViewModel
     {
         /// <summary>
         /// General
@@ -34,14 +35,27 @@ namespace VidPackAdmin.ViewModel
             _bl = bl;
             InitNotificationType();
             InitNotificationTag();
-            LoadExistingNotificationTag(); 
-        }
+            LoadExistingNotificationTag();
+            App.LocalConfiguration = _bl.ReadLocalConfiguration();
 
-        
+            //Command Notification
+            _sendNotification = new Command(DoSendNotification); 
+            
+            //Command Setting
+            _saveSetting = new Command(DoSaveSetting); 
+
+        }
 
         /// <summary>
         /// View Model Data - Notifification
         /// </summary>
+
+        private Command _sendNotification;
+        public Command SendNotification
+        {
+            get { return _sendNotification; }
+        }
+
         private ObservableCollection<NotificationTemplate> _notificationType = new ObservableCollection<NotificationTemplate>(); 
         public ObservableCollection<NotificationTemplate> NotificationType
         {
@@ -55,7 +69,40 @@ namespace VidPackAdmin.ViewModel
             get { return _notificationTag; }
             set {_notificationTag = value; OnPropertyChanged("NotificationTag");}
         }
+        
+        private bool _sendNotificationIsEnabled = true;
+        public bool SendNotificationIsEnabled
+        {
+            get { return _sendNotificationIsEnabled; }
+            set { _sendNotificationIsEnabled = value; OnPropertyChanged("SendNotificationIsEnabled"); }
+        }
 
+        private int _notificationTypeSelectedIndex;
+        public int NotificationTypeSelectedIndex
+        {
+            get { return _notificationTypeSelectedIndex; }
+            set 
+            { 
+                _notificationTypeSelectedIndex = value; 
+                OnPropertyChanged("NotificationTypeSelectedIndex"); 
+
+                ((NotificationViewModel)App.ViewModel["NotificationViewModel"]).MessageIsEnabled = NotificationType[_notificationTypeSelectedIndex].Name.ToUpper() != "TOAST";
+                SendNotificationIsEnabled = CheckIfSendNotificationIsPossible(); 
+            }
+        }
+
+        private int _notificationTagSelectedIndex = 0;
+        public int NotificationTagSelectedIndex
+        {
+            get { return _notificationTagSelectedIndex; }
+            set 
+            { 
+                _notificationTagSelectedIndex = value; 
+                OnPropertyChanged("NotificationTagSelectedIndex");
+
+                SendNotificationIsEnabled = CheckIfSendNotificationIsPossible(); 
+            }
+        }
 
         private void InitNotificationType()
         {
@@ -76,9 +123,44 @@ namespace VidPackAdmin.ViewModel
             NotificationTag.Add(new NotificationInfo() { NotificationTag = "...  Loading  ..." });
         }
 
+        private bool CheckIfSendNotificationIsPossible()
+        {
+            if (NotificationTypeSelectedIndex == -1)
+                return false;
+            if (NotificationTagSelectedIndex == -1)
+                return false;
+
+            NotificationViewModel viewModel = ((NotificationViewModel)App.ViewModel["NotificationViewModel"]);
+            if (String.IsNullOrEmpty(viewModel.NotificationMessage.Headline.Trim()))
+                return false;
+
+            if (String.IsNullOrEmpty(viewModel.NotificationMessage.Message1.Trim()) && NotificationTypeSelectedIndex == 1)
+                return false; 
+
+
+            return true; 
+        }
+
+
 
         /// <summary>
-        /// BL Calls
+        /// View Model Data - Setting
+        /// </summary>
+        private bool _saveSettingIsEnabled = false;
+        public bool SaveSettingIsEnabled 
+        {
+            get { return _saveSettingIsEnabled; }
+            set { _saveSettingIsEnabled = value; OnPropertyChanged("SaveSettingIsEnabled"); } 
+        }
+
+        private Command _saveSetting;
+        public Command SaveSetting
+        {
+            get { return _saveSetting; }
+        }
+
+        /// <summary>
+        /// Action / Method
         /// </summary>
         private async void LoadExistingNotificationTag()
         {
@@ -86,13 +168,16 @@ namespace VidPackAdmin.ViewModel
         }
 
 
-        internal Control GetAdminAreaControl()
+        internal Control GetAdminAreaControl(int selectedAdminAreaIndex = -1)
         {
+            if (selectedAdminAreaIndex != -1)
+                SelectedAdminAreaIndex = selectedAdminAreaIndex; 
+
             switch (SelectedAdminAreaIndex)
             {
                 case 0:
                 {
-                    return new Notification();
+                    return new Notification(_bl, this);
                 }
                 case 1:
                 case 2:
@@ -103,11 +188,25 @@ namespace VidPackAdmin.ViewModel
 
                 case 3:
                 {
-                    return new Setting(_bl);
+                    return new Setting(_bl, this);
                 }
             }
             return null; 
         }
+
+        public void DoSaveSetting()
+        {
+            _bl.SaveLocalConfiguration(App.LocalConfiguration); 
+        }
+
+        public void DoSendNotification()
+        {
+            NotificationViewModel viewModel = App.ViewModel["NotificationViewModel"] as NotificationViewModel;
+            viewModel.SendNotification(NotificationType[NotificationTypeSelectedIndex], NotificationTag[NotificationTagSelectedIndex].NotificationTag); 
+        }
+
+
     }
 
 }
+

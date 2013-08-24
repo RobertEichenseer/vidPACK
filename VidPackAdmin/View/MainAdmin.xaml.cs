@@ -28,15 +28,26 @@ namespace VidPackAdmin.View
         public MainAdmin()
         {
             InitializeComponent();
+
             _viewModel = new MainAdminViewModel(new CommonBl_RestWebService());
+            App.AddViewModel("MainAdminViewModel", _viewModel); 
+            
+
             grdMain.DataContext = _viewModel;
             ribMain.SelectionChanged += ribMain_SelectionChanged;
+
+            Control adminAreaControl = _viewModel.GetAdminAreaControl(0);
+            ContentHost.Child = adminAreaControl; 
         }
 
         void ribMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Control adminAreaControl = _viewModel.GetAdminAreaControl();
-            ContentHost.Child = adminAreaControl; 
+
+            if (e.AddedItems.Count > 0 && e.AddedItems[0].GetType().FullName == "System.Windows.Controls.Ribbon.RibbonTab")
+            {
+                Control adminAreaControl = _viewModel.GetAdminAreaControl();
+                ContentHost.Child = adminAreaControl;
+            }
         }
     }
 }
