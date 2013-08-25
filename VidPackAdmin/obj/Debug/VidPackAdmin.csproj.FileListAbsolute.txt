@@ -1,8 +1,6 @@
 C:\Sourcen\VidPack\VidPackAdmin\bin\Debug\VidPackAdmin.exe.config
 C:\Sourcen\VidPack\VidPackAdmin\bin\Debug\VidPackAdmin.exe
 C:\Sourcen\VidPack\VidPackAdmin\bin\Debug\VidPackAdmin.pdb
-C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\MainWindow.baml
-C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\MainWindow.g.cs
 C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\App.g.cs
 C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\VidPackAdmin_MarkupCompile.cache
 C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\VidPackAdmin.g.resources
@@ -10,7 +8,6 @@ C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\VidPackAdmin.Properties.Resources.reso
 C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\VidPackAdmin.csproj.GenerateResource.Cache
 C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\VidPackAdmin.exe
 C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\VidPackAdmin.pdb
-C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Sourcen\VidPack\VidPackAdmin\bin\Debug\VidPackModel.dll
 C:\Sourcen\VidPack\VidPackAdmin\bin\Debug\VidPackModel.pdb
 C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\VidPackAdmin.csprojResolveAssemblyReference.cache
