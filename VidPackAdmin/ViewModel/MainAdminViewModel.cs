@@ -36,8 +36,7 @@ namespace VidPackAdmin.ViewModel
             InitNotificationType();
             InitNotificationTag();
             LoadExistingNotificationTag();
-            App.LocalConfiguration = _bl.ReadLocalConfiguration();
-
+            
             //Command Notification
             _sendNotification = new Command(DoSendNotification); 
             
@@ -123,7 +122,7 @@ namespace VidPackAdmin.ViewModel
             NotificationTag.Add(new NotificationInfo() { NotificationTag = "...  Loading  ..." });
         }
 
-        private bool CheckIfSendNotificationIsPossible()
+        public bool CheckIfSendNotificationIsPossible()
         {
             if (NotificationTypeSelectedIndex == -1)
                 return false;
@@ -202,7 +201,7 @@ namespace VidPackAdmin.ViewModel
         public void DoSendNotification()
         {
             NotificationViewModel viewModel = App.ViewModel["NotificationViewModel"] as NotificationViewModel;
-            viewModel.SendNotification(NotificationType[NotificationTypeSelectedIndex], NotificationTag[NotificationTagSelectedIndex].NotificationTag); 
+            viewModel.SendNotification(); 
         }
 
 

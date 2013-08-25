@@ -42,12 +42,6 @@ namespace VidPackAdmin.ViewModel
             set { _message3 = value; OnPropertyChanged("Message3"); }
         }
 
-        private string _message4 = "";
-        public string Message4
-        {
-            get { return _message4; }
-            set { _message4 = value; OnPropertyChanged("Message4"); }
-        }
     }
 
 

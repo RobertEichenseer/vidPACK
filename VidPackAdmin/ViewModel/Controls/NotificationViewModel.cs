@@ -40,9 +40,29 @@ namespace VidPackAdmin.ViewModel
             set { _messageIsEnabled = value; OnPropertyChanged("MessageIsEnabled"); }
         }
 
-        internal void SendNotification(NotificationTemplate notificationTemplate, string notificationTag)
+        internal async void SendNotification()
         {
-            var x = "";
+            MainAdminViewModel mainAdminViewModel = ((MainAdminViewModel)App.ViewModel["MainAdminViewModel"]);
+            string xmlTemplate = mainAdminViewModel.NotificationType[mainAdminViewModel.NotificationTypeSelectedIndex].XmlTemplate; 
+            string notificationTag = mainAdminViewModel.NotificationTag[mainAdminViewModel.NotificationTagSelectedIndex].NotificationTag; 
+
+            //Toast Message
+            if (mainAdminViewModel.NotificationTypeSelectedIndex == 0)  
+            {
+                await _bl.SendToastNotificationAsync(NotificationMessage.Headline, xmlTemplate, notificationTag); 
+            }
+
+            //Tile Update
+            if (mainAdminViewModel.NotificationTypeSelectedIndex == 1)
+            { 
+                TileNotification tileNotification = new TileNotification(){
+                    Headline = NotificationMessage.Headline, 
+                    Line1 = NotificationMessage.Message1,
+                    Line2 = NotificationMessage.Message2,
+                    Line3 = NotificationMessage.Message3,
+                };
+                await _bl.SendTileNotificationAsync(tileNotification, xmlTemplate, notificationTag); 
+            }
         }
     }
 }

@@ -18,15 +18,16 @@ namespace VidPackAdmin.Bl
     class CommonBl_RestWebService : ICommonBl
     {
         public static NotificationHubClient _NotificationHubClient;
-        //public Uri _webServiceUri = new Uri("http://localhost:19513/api/");
-        public Uri _webServiceUri = new Uri("http://vidpack.azurewebsites.net/api/");
+        public Uri _webServiceUri; 
 
         public CommonBl_RestWebService()
         {
-            string connectionString = "Endpoint=sb://vidpack-ns.servicebus.windows.net/;SharedSecretIssuer=owner;SharedSecretValue=+pKvadiJtMLt1BcBpttYWKvELK3A1F6zLjbuqpUaoow=";
-            string notificationHubPath = "vidpack";
+            App.LocalConfiguration = ReadLocalConfiguration();
+            string notificationHubConnectionString = App.LocalConfiguration.NotificationHub_ConnectionString;
+            string notificationHubPath = App.LocalConfiguration.NotificationHub_HubPath; 
+            _webServiceUri = new Uri(App.LocalConfiguration.BackendUrl);
 
-            _NotificationHubClient = NotificationHubClient.CreateClientFromConnectionString(connectionString, notificationHubPath);
+            _NotificationHubClient = NotificationHubClient.CreateClientFromConnectionString(notificationHubConnectionString, notificationHubPath);
         }
 
         public async Task<bool> SendToastNotificationAsync(string toast, string xmlTemplate, string notificationTag)

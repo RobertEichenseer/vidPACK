@@ -41,7 +41,11 @@ namespace VidPackAdmin.View.Controls
 
         }
 
-
+        private void Message_KeyUp(object sender, KeyEventArgs e)
+        {
+            MainAdminViewModel mainAdminViewModel = ((MainAdminViewModel)App.ViewModel["MainAdminViewModel"]);
+            mainAdminViewModel.SendNotificationIsEnabled = mainAdminViewModel.CheckIfSendNotificationIsPossible(); 
+        }
 
     }
 }

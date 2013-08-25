@@ -20,21 +20,19 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontStyle="Oblique" FontWeight="Bold">Headline</TextBlock>
         <Label  Grid.Row="1" Grid.Column="0" Content="Notification Title" />
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding NotificationMessage.Headline, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding NotificationMessage.Headline, UpdateSourceTrigger=PropertyChanged}" KeyUp="Message_KeyUp" />
 
         <TextBlock Grid.Row="3" Grid.ColumnSpan="2" FontStyle="Oblique" FontWeight="Bold">Message</TextBlock>
         <Label  Grid.Row="4" Grid.Column="0" Content="Message 1" />
-        <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Text="{Binding NotificationMessage.Message1, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding MessageIsEnabled}"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Text="{Binding NotificationMessage.Message1, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding MessageIsEnabled}" KeyUp="Message_KeyUp"/>
         <Label  Grid.Row="5" Grid.Column="0" Content="Message 2" />
         <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Text="{Binding NotificationMessage.Message2, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding MessageIsEnabled}"/>
         <Label  Grid.Row="6" Grid.Column="0" Content="Message 3" />
         <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Text="{Binding NotificationMessage.Message3, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding MessageIsEnabled}"/>
-        <Label  Grid.Row="7" Grid.Column="0" Content="Message 4" />
-        <TextBox Grid.Row="7" Grid.Column="1" Margin="5" Text="{Binding NotificationMessage.Message4, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding MessageIsEnabled}"/>
+        
     </Grid>
 </UserControl>
