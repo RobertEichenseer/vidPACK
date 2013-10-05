@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="VidPackAdmin.View.Controls.Video"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+ d:DesignHeight="300" d:DesignWidth="500">
+
+    <Grid x:Name="grdMain" Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontStyle="Oblique" FontWeight="Bold">Existing Source Video</TextBlock>
+        <Label  Grid.Row="1" Grid.Column="0" Content="Source Video Title" />
+        <ComboBox Grid.Row="1" Grid.Column="1" Margin="5" ItemsSource="{Binding Asset}" DisplayMemberPath="VideoTitle"/>
+
+        <!--<TextBlock Grid.Row="3" Grid.ColumnSpan="2" FontStyle="Oblique" FontWeight="Bold">Message</TextBlock>
+        <Label  Grid.Row="4" Grid.Column="0" Content="Message 1" />
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Text="{Binding NotificationMessage.Message1, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding MessageIsEnabled}" KeyUp="Message_KeyUp"/>
+        <Label  Grid.Row="5" Grid.Column="0" Content="Message 2" />
+        <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Text="{Binding NotificationMessage.Message2, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding MessageIsEnabled}"/>
+        <Label  Grid.Row="6" Grid.Column="0" Content="Message 3" />
+        <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Text="{Binding NotificationMessage.Message3, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding MessageIsEnabled}"/>-->
+
+    </Grid>
+</UserControl>

@@ -8,10 +8,30 @@ namespace VidPackAdmin.ViewModel
 {
     public class LocalConfigurationInfo
     {
+        //Backend
         public string BackendUrl { get; set; }
+
+        //Notification
         public string NotificationHub_ConnectionString { get; set; }
         public string NotificationHub_HubPath { get; set; }
+
+        //Media Services
+        public string MediaServices_AccountName { get; set; }
+        public string MediaServices_AccountKey { get; set; }
+
     }
+
+    public class MediaAssetInfo : BaseViewModel
+    {
+        private string _videoTitle = ""; 
+        public string VideoTitle 
+        {
+            get { return _videoTitle;  }
+            set { _videoTitle = value; OnPropertyChanged("VideoTitle"); }
+        }
+    }
+
+
 
     public class NotificationMessageInfo : BaseViewModel
     {

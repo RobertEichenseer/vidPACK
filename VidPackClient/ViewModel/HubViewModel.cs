@@ -71,6 +71,7 @@ namespace VidPackClient.ViewModel
         //Event Handling
         internal async void LoadHubContent()
         {
+            
             ActualSession = await _bl.LoadActualSession();
             NextSession = await _bl.LoadNextSession();
             Sessions = new ObservableCollection<Session>(await _bl.LoadPastSession());
@@ -97,10 +98,28 @@ namespace VidPackClient.ViewModel
                 webServiceUrl = "http://vidpack.azurewebsites.net/api/";
                 applicationDataContainer.Values["webServiceUrl"] = webServiceUrl;
             }
-            
-            webServiceUrl = "http://localhost:19513/api/";
+
+            string mobileServiceUrl = applicationDataContainer.Values["mobileServiceUrl"] as string;
+            if (String.IsNullOrEmpty(mobileServiceUrl))
+            {
+                mobileServiceUrl = "https://vidpackstaging.azure-mobile.net/";
+            }
+
+            string mobileApplicationKey = applicationDataContainer.Values["mobileApplicationKey"] as string;
+            if (String.IsNullOrEmpty(mobileApplicationKey))
+            {
+                mobileApplicationKey = "FnIlICvSGhjXlggDLhtCPiGpNYDoti15";
+            }
+
+            //Debug Settings
+            //webServiceUrl = "http://localhost:19513/api/";
+            //mobileServiceUrl = "https://vidpackstaging.azure-mobile.net/";
+            //mobileApplicationKey = "FnIlICvSGhjXlggDLhtCPiGpNYDoti15"; 
+
             _bl.SetConfigPara(new ClientConfig() { 
                 WebServiceUrl = webServiceUrl, 
+                MobileServiceUrl = mobileServiceUrl,
+                MobileServiceApplicationKey = mobileApplicationKey,
             }); 
         }
     }

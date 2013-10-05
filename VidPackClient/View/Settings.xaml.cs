@@ -28,10 +28,21 @@ namespace VidPackClient.View
         {
             ApplicationDataContainer applicationDataContainer = ApplicationData.Current.LocalSettings;
             string webServiceUrl = applicationDataContainer.Values["webServiceUrl"] as string;
-            if (String.IsNullOrEmpty(webServiceUrl))
-                webServiceUrl = ""; 
+            string mobileServiceUrl = applicationDataContainer.Values["mobileServiceUrl"] as string;
+            string mobileServiceAppKey = applicationDataContainer.Values["mobileServiceAppKey"] as string;
 
-            txtWebServiceUrl.Text = webServiceUrl; 
+            if (String.IsNullOrEmpty(webServiceUrl))
+                webServiceUrl = "";
+
+            if (String.IsNullOrEmpty(mobileServiceUrl))
+                mobileServiceUrl = "";
+
+            if (String.IsNullOrEmpty(mobileServiceAppKey))
+                mobileServiceAppKey = "";
+
+            txtWebServiceUrl.Text = webServiceUrl;
+            txtMobileServiceUrl.Text = mobileServiceUrl;
+            txtMobileServiceAppKey.Text = mobileServiceAppKey;
         }
 
         private void txtWebServiceUrl_TextChanged(object sender, TextChangedEventArgs e)
@@ -39,5 +50,22 @@ namespace VidPackClient.View
             ApplicationDataContainer applicationDataContainer = ApplicationData.Current.LocalSettings;
             applicationDataContainer.Values["webServiceUrl"] = txtWebServiceUrl.Text; 
         }
+
+        private void txtMobileServiceUrl_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ApplicationDataContainer applicationDataContainer = ApplicationData.Current.LocalSettings;
+            applicationDataContainer.Values["mobileServiceUrl"] = txtMobileServiceUrl.Text; 
+        }
+
+        private void txtMobileServiceAppKey_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ApplicationDataContainer applicationDataContainer = ApplicationData.Current.LocalSettings;
+            applicationDataContainer.Values["mobileServiceAppKey"] = txtMobileServiceAppKey.Text; 
+        }
+
+        
+
+        
+
     }
 }

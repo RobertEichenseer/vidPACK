@@ -1,0 +1,26 @@
+﻿-- User / Logon Creation
+
+--Master
+CREATE LOGIN VidPackStaging WITH PASSWORD='!!Passw0rd!!'
+
+
+--VidPACK
+CREATE USER VidPackStaging FROM LOGIN VidPackStaging
+
+EXEC sp_addrolemember 'db_datawriter', 'VidPackStaging'
+EXEC sp_addrolemember 'db_datareader', 'VidPackStaging'
+EXEC sp_addrolemember 'db_ddladmin', 'VidPackStaging'
+
+
+
+
+
+-- Mobile Services
+CREATE VIEW VidPackStaging.ExistingSession
+AS
+SELECT * from dbo.ExistingSession
+
+
+CREATE VIEW VidPackStaging.Notification
+AS
+SELECT * from dbo.Notification

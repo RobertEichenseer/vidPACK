@@ -162,10 +162,12 @@
 
                     <!-- Past Sessions -->
                     <Frame x:Name="frmPastSession" Width="600" Margin="20,20,20,40">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="Past Sessions" Style="{StaticResource GroupHeaderTextStyle}" Margin="10" />
-                            <GridView x:ConnectionId='4' ItemsSource="{Binding Path=Sessions}" ItemTemplate="{StaticResource DataTemplateSession}"                                                 />
-                        </StackPanel>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Past Sessions" Style="{StaticResource GroupHeaderTextStyle}" Margin="10" />
+                                <GridView x:ConnectionId='4' ItemsSource="{Binding Path=Sessions}" ItemTemplate="{StaticResource DataTemplateSession}"                                                 />
+                            </StackPanel>
+                        </ScrollViewer>
                     </Frame>
                     <!-- /Past Sessions -->
 

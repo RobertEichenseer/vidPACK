@@ -12,6 +12,12 @@
     <StackPanel Background="{StaticResource AppBarBackgroundThemeBrush}">
         <TextBlock Text="WebService Url" Margin="10,10,10,0" FontFamily="Global User Interface" Style="{StaticResource GroupHeaderTextStyle}"/>
         <TextBox x:ConnectionId='2' x:Name="txtWebServiceUrl" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="252"                                            />
+
+        <TextBlock Text="Mobile Service Url" Margin="10,10,10,0" FontFamily="Global User Interface" Style="{StaticResource GroupHeaderTextStyle}"/>
+        <TextBox x:ConnectionId='3' x:Name="txtMobileServiceUrl" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="252"                                               />
+        <TextBlock Text="Mobile Service App Key" Margin="10,10,10,0" FontFamily="Global User Interface" Style="{StaticResource GroupHeaderTextStyle}"/>
+        <TextBox x:ConnectionId='4' x:Name="txtMobileServiceAppKey" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="252"                                                  />
+        
     </StackPanel>
 
     

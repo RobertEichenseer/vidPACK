@@ -58,11 +58,29 @@
     <AppxPackagedFile Include="C:\Sourcen\VidPack\packages\Callisto.1.3.1\lib\winrt45\Callisto.dll">
       <PackagePath>Callisto.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\packages\Microsoft.Bcl.Async.1.0.16\lib\win8\Microsoft.Threading.Tasks.dll">
+      <PackagePath>Microsoft.Threading.Tasks.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\packages\Microsoft.Bcl.Async.1.0.16\lib\win8\Microsoft.Threading.Tasks.Extensions.dll">
+      <PackagePath>Microsoft.Threading.Tasks.Extensions.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\packages\WindowsAzure.Messaging.Managed.0.1.6.0\lib\netcore45\Microsoft.WindowsAzure.Messaging.Managed.dll">
       <PackagePath>Microsoft.WindowsAzure.Messaging.Managed.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\packages\WindowsAzure.MobileServices.1.0.2\lib\netcore45\Microsoft.WindowsAzure.Mobile.dll">
+      <PackagePath>Microsoft.WindowsAzure.Mobile.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\packages\WindowsAzure.MobileServices.1.0.2\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.dll">
+      <PackagePath>Microsoft.WindowsAzure.Mobile.Ext.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\packages\Microsoft.Net.Http.2.2.15\lib\win8\System.Net.Http.Extensions.dll">
+      <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\packages\Microsoft.Net.Http.2.2.15\lib\win8\System.Net.Http.Primitives.dll">
+      <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackModel\bin\Debug\VidPackModel.dll">
       <PackagePath>VidPackModel.dll</PackagePath>
@@ -117,6 +135,9 @@
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\VidPack_DBCreation.txt">
+      <PackagePath>Assets\VidPack_DBCreation.txt</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Common\ReadMe.txt">
       <PackagePath>Common\ReadMe.txt</PackagePath>

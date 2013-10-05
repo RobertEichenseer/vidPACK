@@ -179,10 +179,12 @@ namespace VidPackAdmin.ViewModel
                     return new Notification(_bl, this);
                 }
                 case 1:
+                {
+                    break;
+                }
                 case 2:
                 {
-                    //not yet implemented
-                    break;
+                    return new Video(_bl, this); 
                 }
 
                 case 3:

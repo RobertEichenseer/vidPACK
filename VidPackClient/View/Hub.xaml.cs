@@ -28,7 +28,6 @@ namespace VidPackClient
     public sealed partial class Hub : VidPackClient.Common.LayoutAwarePage
     {
 
-        //HubViewModel _viewModel = new HubViewModel(new CommonBl_RestWebService()); 
         HubViewModel _viewModel = new HubViewModel(App._Bl); 
 
         public Hub()

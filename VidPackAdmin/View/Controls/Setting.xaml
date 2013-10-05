@@ -19,7 +19,11 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
         </Grid.RowDefinitions>
             
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontStyle="Oblique" FontWeight="Bold">Backend Configuration</TextBlock>
@@ -32,5 +36,11 @@
         <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Text="{Binding LocalConfiguration.NotificationHub_ConnectionString, UpdateSourceTrigger=PropertyChanged}" KeyDown="SettingValue_KeyDown"/>
         <Label  Grid.Row="5" Grid.Column="0" Content="Hub Path" />
         <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Text="{Binding LocalConfiguration.NotificationHub_HubPath, UpdateSourceTrigger=PropertyChanged}" KeyDown="SettingValue_KeyDown"/>
+
+        <TextBlock Grid.Row="7" Grid.ColumnSpan="2" FontStyle="Oblique" FontWeight="Bold">Media Services</TextBlock>
+        <Label  Grid.Row="8" Grid.Column="0" Content="Account Name" />
+        <TextBox Grid.Row="8" Grid.Column="1" Margin="5" Text="{Binding LocalConfiguration.MediaServices_AccountName, UpdateSourceTrigger=PropertyChanged}" KeyDown="SettingValue_KeyDown"/>
+        <Label  Grid.Row="9" Grid.Column="0" Content="Account Key" />
+        <TextBox Grid.Row="9" Grid.Column="1" Margin="5" Text="{Binding LocalConfiguration.MediaServices_AccountKey, UpdateSourceTrigger=PropertyChanged}" KeyDown="SettingValue_KeyDown"/>
     </Grid>
 </UserControl>

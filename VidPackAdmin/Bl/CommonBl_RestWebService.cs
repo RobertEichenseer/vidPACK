@@ -70,6 +70,8 @@ namespace VidPackAdmin.Bl
                 BackendUrl = ConfigurationManager.AppSettings.Get("BackendUrl"),
                 NotificationHub_ConnectionString = ConfigurationManager.AppSettings.Get("NotificationHub_ConnectionString"),
                 NotificationHub_HubPath = ConfigurationManager.AppSettings.Get("NotificationHub_HubPath"),
+                MediaServices_AccountKey = ConfigurationManager.AppSettings.Get("MediaServices_AccountKey"),
+                MediaServices_AccountName = ConfigurationManager.AppSettings.Get("MediaServices_AccountName"),
             };
             return localConfiguration;
         }
@@ -85,6 +87,12 @@ namespace VidPackAdmin.Bl
             appSettingsSection.Settings.Add("NotificationHub_ConnectionString", localConfiguration.NotificationHub_ConnectionString);
             appSettingsSection.Settings.Remove("NotificationHub_HubPath"); 
             appSettingsSection.Settings.Add("NotificationHub_HubPath", localConfiguration.NotificationHub_HubPath);
+
+            appSettingsSection.Settings.Remove("MediaServices_AccountName");
+            appSettingsSection.Settings.Add("MediaServices_AccountName", localConfiguration.MediaServices_AccountName);
+            appSettingsSection.Settings.Remove("MediaServices_AccountKey");
+            appSettingsSection.Settings.Add("MediaServices_AccountKey", localConfiguration.MediaServices_AccountKey);
+
 
             configuration.Save(ConfigurationSaveMode.Modified);
         }

@@ -39,5 +39,8 @@ namespace VidPackModel
     public class ClientConfig
     {
         public string WebServiceUrl { get; set; }
+
+        public string MobileServiceUrl { get; set; }
+        public string MobileServiceApplicationKey { get; set; }
     }
 }

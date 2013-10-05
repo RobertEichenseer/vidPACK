@@ -31,3 +31,5 @@ C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\View\Controls\Notification.baml
 C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\View\Controls\Notification.g.cs
 C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\View\Controls\Setting.baml
 C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\View\Controls\Setting.g.cs
+C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\View\Controls\Video.baml
+C:\Sourcen\VidPack\VidPackAdmin\obj\Debug\View\Controls\Video.g.cs
