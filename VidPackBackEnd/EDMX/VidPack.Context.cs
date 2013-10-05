@@ -27,5 +27,6 @@ namespace VidPackBackEnd.EDMX
     
         public DbSet<ExistingSession> ExistingSession { get; set; }
         public DbSet<Notification> Notification { get; set; }
+        public DbSet<DownloadItem> DownloadItem { get; set; }
     }
 }

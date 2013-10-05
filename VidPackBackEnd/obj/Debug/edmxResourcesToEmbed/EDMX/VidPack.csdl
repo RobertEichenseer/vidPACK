@@ -3,6 +3,11 @@
   <EntityContainer Name="VidPackEntities" p1:LazyLoadingEnabled="true">
     <EntitySet Name="ExistingSession" EntityType="VidPackModel.ExistingSession" />
     <EntitySet Name="Notification" EntityType="VidPackModel.Notification" />
+    <EntitySet Name="DownloadItem" EntityType="VidPackModel.DownloadItem" />
+    <AssociationSet Name="FK_DownloadItem_ExistingSession" Association="VidPackModel.FK_DownloadItem_ExistingSession">
+      <End Role="ExistingSession" EntitySet="ExistingSession" />
+      <End Role="DownloadItem" EntitySet="DownloadItem" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="ExistingSession">
     <Key>
@@ -18,6 +23,7 @@
     <Property Type="String" Name="SessionThumbnailUri" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Type="Int32" Name="IsActualSession" />
     <Property Type="Int32" Name="IsNextSession" />
+    <NavigationProperty Name="DownloadItem" Relationship="VidPackModel.FK_DownloadItem_ExistingSession" FromRole="ExistingSession" ToRole="DownloadItem" />
   </EntityType>
   <EntityType Name="Notification">
     <Key>
@@ -26,4 +32,27 @@
     <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="String" Name="NotificationTag" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="DownloadItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ExistingSession_Id" Nullable="false" />
+    <Property Type="String" Name="Caption" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Url" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ExistingSession" Relationship="VidPackModel.FK_DownloadItem_ExistingSession" FromRole="DownloadItem" ToRole="ExistingSession" />
+  </EntityType>
+  <Association Name="FK_DownloadItem_ExistingSession">
+    <End Type="VidPackModel.ExistingSession" Role="ExistingSession" Multiplicity="1" />
+    <End Type="VidPackModel.DownloadItem" Role="DownloadItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExistingSession">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DownloadItem">
+        <PropertyRef Name="ExistingSession_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

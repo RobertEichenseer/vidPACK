@@ -13,6 +13,7 @@ namespace VidPackModel
             this.SessionThumbnailDisplayUrl = "ms-appx:///Assets/SessionPlaceholder.jpg"; 
         }
 
+        public int Id { get; set; }
         public string SessionTitle { get; set; }
         public string SessionSubTitle { get; set; }
         public string SessionDate { get; set; }
@@ -21,9 +22,10 @@ namespace VidPackModel
         public string SessionVideoUrl { get; set; }
         public string SessionThumbnailUrl { get; set; }
         public string SessionThumbnailDisplayUrl { get; set; }
+        public List<DownloadItemInfo> SessionDownloadItem { get; set; }
     }
 
-    public class DownloadItem
+    public class DownloadItemInfo
     {
         public string Caption { get; set; }
         public string Description { get; set; }

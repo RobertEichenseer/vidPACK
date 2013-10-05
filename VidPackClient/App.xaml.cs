@@ -39,7 +39,6 @@ namespace VidPackClient
 
         //Define BL
         //public static ICommonBl _Bl = new CommonBl_RestWebService();
-        //public static ICommonBl _BlMobileService = new CommonBl_MobileServices();
         public static ICommonBl _Bl = new CommonBl_MobileServices(); 
 
         /// <summary>

@@ -23,32 +23,52 @@ namespace VidPackBackEnd.api
         public IEnumerable<Session> Get(ODataQueryOptions<Session> queryOptions)
         {
             List<Session> session = new List<Session>();
-            using (VidPackEntities db = new VidPackEntities())
+            try
             {
-                var listSession = db.ExistingSession.Select(item => new
+                using (VidPackEntities db = new VidPackEntities())
                 {
-                    SessionDate = item.SessionDate,
-                    SessionDescription = item.SessionDescription,
-                    SessionSubTitle = item.SessionSubTitle,
-                    SessionThumbnailUrl = item.SessionThumbnailUri,
-                    SessionTitle = item.SessionSubTitle,
-                    SessionVideoUrl = item.SessionVideoUri == null ? "" : item.SessionVideoUri,
-                    Speaker = item.Speaker,
-                    isActual = item.IsActualSession 
-                }).ToList();
+                    var listSession = db.ExistingSession.Include("DownloadItem").Select(item => new
+                    {
+                        SessionDate = item.SessionDate,
+                        SessionDescription = item.SessionDescription,
+                        SessionSubTitle = item.SessionSubTitle,
+                        SessionThumbnailUrl = item.SessionThumbnailUri,
+                        SessionTitle = item.SessionSubTitle,
+                        SessionVideoUrl = item.SessionVideoUri == null ? "" : item.SessionVideoUri,
+                        Speaker = item.Speaker,
+                        isActual = item.IsActualSession,
+                        DownloadItem = item.DownloadItem.Select(_ => new
+                        {
+                            Caption = _.Caption,
+                            Description = _.Description,
+                            Url = _.Url,
+                        })
+                    }).ToList();
 
-                //ToString() / String.Format() is not know within projection
-                session = listSession.Select(item => new Session() {
-                    SessionDate = Convert.ToString(item.SessionDate),
-                    SessionDescription = item.SessionDescription,
-                    SessionSubTitle = item.SessionSubTitle,
-                    SessionThumbnailUrl = String.Format("{0}{1}", ThumbnailStorageUrl, item.SessionThumbnailUrl),
-                    SessionTitle = item.SessionSubTitle,
-                    SessionVideoUrl = item.SessionVideoUrl,
-                    Speaker = item.Speaker 
-                }).ToList<Session>(); 
+                    //ToString() / String.Format() is not know within projection
+                    session = listSession.Select(item => new Session() {
+                        SessionDate = Convert.ToString(item.SessionDate),
+                        SessionDescription = item.SessionDescription,
+                        SessionSubTitle = item.SessionSubTitle,
+                        SessionThumbnailUrl = String.Format("{0}{1}", ThumbnailStorageUrl, item.SessionThumbnailUrl),
+                        SessionTitle = item.SessionSubTitle,
+                        SessionVideoUrl = item.SessionVideoUrl,
+                        Speaker = item.Speaker,
+                        SessionDownloadItem = item.DownloadItem.Select(_ => new DownloadItemInfo() {
+                            Caption = _.Caption,
+                            Description = _.Description,
+                            Url = _.Url,
+                        }).ToList<DownloadItemInfo>(),
+                    }).ToList<Session>();
+
+                    return session;
+                }
             }
-            return session;
+            catch (Exception ex)
+            {
+                //TODO: Implement Error Handling
+                return new List<Session>();
+            }
         }
 
         // GET api/session/5

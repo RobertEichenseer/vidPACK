@@ -33,4 +33,32 @@ namespace VidPackClient.Bl.MobileServiceDataType
         public string NotificationTag { get; set; }
     }
 
+    public class DownloadItem
+    {
+        public int Id { get; set; }
+        public int ExistingSession_Id { get; set; }
+        public string Caption {get; set;}
+        public string Description {get; set;}
+        public string Url { get; set; }
+    }
+
+    public class V_ExistingSession_DownloadItem
+    {
+        int ExistingSessionId { get; set; }
+        string SessionTitle { get; set; }
+        string SessionSubTitle { get; set;}
+        DateTime SessionDate {get; set;}
+        string Speaker { get; set; }
+        string SessionDescription { get; set; } 
+        string SessionVideoUri { get; set; }
+        string SessionThumbnailUri { get; set; } 
+        string IsActualSession { get; set; }
+        int IsNextSession { get; set; }
+
+        int DownloadItemId { get; set; }
+        string Caption { get; set; } 
+        string Description { get; set; }
+        string Url { get; set; } 
+    }
+
 }

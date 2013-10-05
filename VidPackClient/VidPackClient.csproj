@@ -148,6 +148,7 @@
     <None Include="VidPackClient_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Azure_MobileServiceCreation.txt" />
     <Content Include="Assets\SessionPlaceholder.jpg" />
     <Content Include="Assets\Logo.png" />
     <Content Include="Assets\Session.jpg" />

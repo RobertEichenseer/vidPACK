@@ -21,7 +21,7 @@ namespace VidPackClient.ViewModel
         }
 
 
-        public ObservableCollection<DownloadItem> DownloadItems { get; set; }
+        public ObservableCollection<DownloadItemInfo> DownloadItems { get; set; }
 
         private Session _nextSession { get; set; }
         public Session NextSession 
@@ -46,14 +46,14 @@ namespace VidPackClient.ViewModel
             ReadConfigParameter();
             
             Sessions = new ObservableCollection<Session>();
-            DownloadItems = new ObservableCollection<DownloadItem>(); 
+            DownloadItems = new ObservableCollection<DownloadItemInfo>(); 
         }
 
         //Called from Design Mode - Populate Some Demo Data
         public HubViewModel()
         {
             Sessions = new ObservableCollection<Session>();
-            DownloadItems = new ObservableCollection<DownloadItem>(); 
+            DownloadItems = new ObservableCollection<DownloadItemInfo>(); 
             
             Sessions.Add(new Session() { SessionTitle="From Zero To Azure Hero", SessionSubTitle="SubTitle", SessionDate="2013-06-28", Speaker="Robert Eichenseer" });
             Sessions.Add(new Session() { SessionTitle = "Win8 jetzt auch mit speichern", SessionSubTitle = "SubTitle", SessionDate = "2013-06-28", Speaker = "Robert Eichenseer" });
@@ -64,7 +64,7 @@ namespace VidPackClient.ViewModel
 
             for (int i = 0; i < 20; i++)
             {
-                DownloadItems.Add(new DownloadItem() { Caption = String.Format("Download Item {0}",i.ToString()), Url = "http://www.download.com", Description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." });
+                DownloadItems.Add(new DownloadItemInfo() { Caption = String.Format("Download Item {0}",i.ToString()), Url = "http://www.download.com", Description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." });
             }
         }
 
@@ -112,7 +112,7 @@ namespace VidPackClient.ViewModel
             }
 
             //Debug Settings
-            //webServiceUrl = "http://localhost:19513/api/";
+            webServiceUrl = "http://localhost:19513/api/";
             //mobileServiceUrl = "https://vidpackstaging.azure-mobile.net/";
             //mobileApplicationKey = "FnIlICvSGhjXlggDLhtCPiGpNYDoti15"; 
 

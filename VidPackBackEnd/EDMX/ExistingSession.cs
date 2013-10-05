@@ -14,6 +14,11 @@ namespace VidPackBackEnd.EDMX
     
     public partial class ExistingSession
     {
+        public ExistingSession()
+        {
+            this.DownloadItem = new HashSet<DownloadItem>();
+        }
+    
         public int Id { get; set; }
         public string SessionTitle { get; set; }
         public string SessionSubTitle { get; set; }
@@ -24,5 +29,7 @@ namespace VidPackBackEnd.EDMX
         public string SessionThumbnailUri { get; set; }
         public Nullable<int> IsActualSession { get; set; }
         public Nullable<int> IsNextSession { get; set; }
+    
+        public virtual ICollection<DownloadItem> DownloadItem { get; set; }
     }
 }
