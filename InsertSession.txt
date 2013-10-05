@@ -1,0 +1,16 @@
+select * from existingsession
+delete from existingsession where id = 1 or id = 6 or id = 7 or id = 9
+update existingsession set SessionVideoUri = 'https://vidpack.blob.core.windows.net/asset-96d23cda-c290-4433-b7ff-957b71623654/0_Opening_H264_4500kbps_AAC_und_ch2_128kbps.mp4?sv=2012-02-12&st=2013-09-28T07%3A28%3A10Z&se=2015-09-28T07%3A28%3A10Z&sr=c&si=75511809-b5c2-44b8-b331-ea9bd19c23f1&sig=ZXVrh28vkPXzSDsKpC8GAM7d2tqjfSxPAJtXtGDtLM0%3D' where id = 11
+update existingsession set SessionSubtitle = 'LightSwitch ohne Silverlight - HTML Client Preview' where id = 12
+update existingsession set IsActualSession = 1 where id = 13
+update existingsession set IsNextSession = 1 where id = 14
+
+
+insert into existingsession (SessionTitle, SessionSubTitle, SessionDate, Speaker, SessionDescription, SessionVideoUri, SessionThumbnailUri) VALUES
+('Abschluss DDF 2013', 'Verlosung', '2013-01-01', 'Udo Neßhöfer, Uli Stirnweiß', 'Abschluss und Verlosung', 'https://vidpack.blob.core.windows.net/asset-b6da904f-6e6a-4806-b721-e82ff6963bd3/Abschluss_H264_4500kbps_AAC_und_ch2_128kbps.mp4?sv=2012-02-12&st=2013-09-28T10%3A07%3A52Z&se=2015-09-28T10%3A07%3A52Z&sr=c&si=64cae0cd-4f92-4089-9cf3-773743a58db4&sig=SQjs7bT9D8bADTNkxAYeKRJGkHWxbtwI8ZoNJAyGCc0%3D', 'https://vidpack.blob.core.windows.net/publiccontent/ZZ_UdoNe%C3%9Fh%C3%B6ver.png') 
+
+
+insert into existingsession (SessionTitle, SessionSubTitle, SessionDate, Speaker, SessionDescription, SessionVideoUri, SessionThumbnailUri) VALUES
+('Scrum im Bundestag', 'Scrum im Bundestag', '2013-06-15', 'Udo Wiegärtner', 'Obwohl die Vorstellung recht absurd klingt, könnte es durchaus Parallelen zwischen einem imaginären „Bundes-Scrum“ und unseren agilen Software-Projekten geben. Ist ein Koalitionsvertrag nicht eine Art Product Backlog  –  nur ohne jegliche Priorisierung? Um wie viel wertvoller könnten manche „Daily-Scrum-Kabinettssitzungen" sein, wenn sich die Redner auf die drei Daily-Scrum-Fragen beschränkten, anstatt manchmal wortreich wenig zu sagen? Was würde passieren, wenn sich die Bundesregierung an ihrer Regierungs-Velocity in Story Points messen würde? Lassen Sie Sich durch „Scrum für Deutschland“ typische Verhaltensmuster in Scrum-Teams vor Augen führen und gewinnen Sie dadurch Inspirationen für Ihre eigenen agilen Software-Teams', 
+'https://vidpack.blob.core.windows.net/asset-62a680d5-6239-40a0-a702-af8936d7b511/UdoWiegaertner_H264_4500kbps_AAC_und_ch2_128kbps.mp4?sv=2012-02-12&st=2013-09-28T10%3A05%3A57Z&se=2015-09-28T10%3A05%3A57Z&sr=c&si=af4b5c97-3e08-433b-8527-fd357e412ae7&sig=fF9cWTvOEscmwWukF%2FCXaYiYitqBVevffLf7ERio5Io%3D', 
+'https://vidpack.blob.core.windows.net/publiccontent/ZZ_UdoWiegaertner.png') 
