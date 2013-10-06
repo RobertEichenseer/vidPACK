@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using VidPackClient.Bl.MobileServiceDataType;
@@ -61,7 +62,10 @@ namespace VidPackClient.Bl
 
         public async Task<List<VidPackModel.Session>> LoadPastSession()
         {
-            var actualSession = (await _mobileService.GetTable<ExistingSession>().ReadAsync())
+            List<Session> actualSession; 
+
+            #region - Mobile Service "Traditional" -
+            actualSession = (await _mobileService.GetTable<ExistingSession>().ReadAsync())
                      .Select(item => new Session
                      {
                          Id = item.Id, 
@@ -74,7 +78,7 @@ namespace VidPackClient.Bl
                          SessionVideoUrl = item.SessionVideoUri,
                      }).ToList<Session>();
 
-            #region - Mobile Service "Traditional" -
+            #region - Mobile Service "Traditional" Child Records -
             foreach (Session session in actualSession)
             { 
                 session.SessionDownloadItem = (await _mobileService.GetTable<MobileServiceDataType.DownloadItem>().Where(item => item.ExistingSession_Id == session.Id)
@@ -86,34 +90,94 @@ namespace VidPackClient.Bl
                                                 .ToListAsync()); 
 
             }
+            #endregion - Mobile Service "Traditional" Child Records -
             #endregion - Mobile Service "Traditional"-
 
             #region - Mobile Service "VTable" -
-            JToken jToken = (await _mobileService.GetTable("V_ExistingSession_DownloadItem").ReadAsync("Id=1"));
-            var temp = jToken.ToObject<List<V_ExistingSession_DownloadItem>>();
+            var sessionRawInfo = (await _mobileService.GetTable<V_ExistingSession_DownloadItem>().ToListAsync());
+            var sessionGrouped = sessionRawInfo.GroupBy(p => p.SessionDescription, p => p,
+                (key, g) => new
+                { 
+                    SessionTitle = g.ToList()[0].SessionTitle,
+                    SessionSubTitle = g.ToList()[0].SessionSubTitle,
+                    SessionDate = g.ToList()[0].SessionDate,
+                    Speaker = g.ToList()[0].Speaker,
+                    SessionDescription = g.ToList()[0].SessionDescription,
+                    SessionVideoUri = g.ToList()[0].SessionVideoUri,
+                    SessionThumbnailUrl = g.ToList()[0].SessionThumbnailUri,
+                    SessionThumbnailDisplayUrl = "ms-appx:///Assets/SessionPlaceholder.jpg",
+                    IsActualSession = g.ToList()[0].IsActualSession,
+                    IsNextSession = g.ToList()[0].IsNextSession,
+                    DownloadItems = g.ToList().Select(item => new {
+                        Caption = item.Caption,
+                        Description = item.Description, 
+                        Url = item.Url
+                    }).ToList(),
+                }).ToList();
 
-            //var list = temp.GroupBy(p => p.SessionDescription, p => p,
-            //    (key, g) => new { Title = key, OrderItem = g.ToList() }).ToList(); 
+            actualSession = sessionGrouped.Select(item => new Session() { 
+                SessionDate = item.SessionDate.ToString(),
+                SessionDescription = item.SessionDescription,
+                SessionSubTitle = item.SessionSubTitle,
+                SessionThumbnailDisplayUrl = item.SessionThumbnailDisplayUrl,
+                SessionThumbnailUrl = item.SessionThumbnailUrl,
+                SessionTitle = item.SessionTitle,
+                SessionVideoUrl = item.SessionVideoUri, 
+                Speaker = item.Speaker,
+                SessionDownloadItem = item.DownloadItems.Select(_ => new DownloadItemInfo() {
+                    Caption = _.Caption,
+                    Description = _.Description,
+                    Url = _.Url,
+                }).ToList<DownloadItemInfo>(),
+            }).ToList<Session>(); 
 
-            //var temp2 = jToken.ToObject<List<DownloadItemInfo>>(); 
-            
-            //JToken jToken = await table.ReadAsync(String.Format("CustomerId={0}", customerId));
-            //List<CustomOrderTypeRef> tempCustomOrder = jToken.ToObject<List<CustomOrderTypeRef>>();
-
-            //var results = tempCustomOrder.GroupBy(p => p.CustomOrderId, p => p,
-            //             (key, g) => new { CustomerId = key, OrderItem = g.ToList() }).ToList();
-
-
-            //Customer specificCustomer = (await App.mobileServiceClient.GetTable<Customer>().Where(item => item.FirstName == "Robert").ToListAsync()).FirstOrDefault();
-            ////Get specific customer by unique id
-            //Customer specificCustomerLookup = (await App.mobileServiceClient.GetTable<Customer>().LookupAsync(1)); 
-            ////Json
-            //var specificCustomerJson = (await App.mobileServiceClient.GetTable("Customer").ReadAsync("FirstName == 'Robert'"));
-            //var specificCustomerAsJson = (await App.mobileServiceClient.GetTable("Customer").LookupAsync(1)).Stringify();
-
+            //Get json Info
+            //JToken jToken = (await _mobileService.GetTable("V_ExistingSession_DownloadItem").ReadAsync(""));
+            //var sessions = jToken.ToObject<List<V_ExistingSession_DownloadItem>>();
             #endregion - Mobile Service "VTable" - 
 
+            #region - Mobile Service API -
+            var arguments = new Dictionary<string, string>();
+            var sessionRawInfoApi = (await _mobileService.InvokeApiAsync<List<V_ExistingSession_DownloadItem>>("v_existingsession_downloaditem", HttpMethod.Get, arguments));
+            var sessionGroupedApi = sessionRawInfoApi.GroupBy(p => p.SessionDescription, p => p,
+                (key, g) => new
+                {
+                    SessionTitle = g.ToList()[0].SessionTitle,
+                    SessionSubTitle = g.ToList()[0].SessionSubTitle,
+                    SessionDate = g.ToList()[0].SessionDate,
+                    Speaker = g.ToList()[0].Speaker,
+                    SessionDescription = g.ToList()[0].SessionDescription,
+                    SessionVideoUri = g.ToList()[0].SessionVideoUri,
+                    SessionThumbnailUrl = g.ToList()[0].SessionThumbnailUri,
+                    SessionThumbnailDisplayUrl = "ms-appx:///Assets/SessionPlaceholder.jpg",
+                    IsActualSession = g.ToList()[0].IsActualSession,
+                    IsNextSession = g.ToList()[0].IsNextSession,
+                    DownloadItems = g.ToList().Select(item => new
+                    {
+                        Caption = item.Caption,
+                        Description = item.Description,
+                        Url = item.Url
+                    }).ToList(),
+                }).ToList();
 
+            actualSession = sessionGroupedApi.Select(item => new Session()
+            {
+                SessionDate = item.SessionDate.ToString(),
+                SessionDescription = item.SessionDescription,
+                SessionSubTitle = item.SessionSubTitle,
+                SessionThumbnailDisplayUrl = item.SessionThumbnailDisplayUrl,
+                SessionThumbnailUrl = item.SessionThumbnailUrl,
+                SessionTitle = item.SessionTitle,
+                SessionVideoUrl = item.SessionVideoUri,
+                Speaker = item.Speaker,
+                SessionDownloadItem = item.DownloadItems.Select(_ => new DownloadItemInfo()
+                {
+                    Caption = _.Caption,
+                    Description = _.Description,
+                    Url = _.Url,
+                }).ToList<DownloadItemInfo>(),
+            }).ToList<Session>(); 
+            #endregion - Mobile Service API -
 
             return actualSession; 
         }

@@ -44,21 +44,22 @@ namespace VidPackClient.Bl.MobileServiceDataType
 
     public class V_ExistingSession_DownloadItem
     {
-        int ExistingSessionId { get; set; }
-        string SessionTitle { get; set; }
-        string SessionSubTitle { get; set;}
-        DateTime SessionDate {get; set;}
-        string Speaker { get; set; }
-        string SessionDescription { get; set; } 
-        string SessionVideoUri { get; set; }
-        string SessionThumbnailUri { get; set; } 
-        string IsActualSession { get; set; }
-        int IsNextSession { get; set; }
+        public int id { get; set; }
+        public int ExistingSessionId { get; set; }
+        public string SessionTitle { get; set; }
+        public string SessionSubTitle { get; set; }
+        public DateTime SessionDate { get; set; }
+        public string Speaker { get; set; }
+        public string SessionDescription { get; set; }
+        public string SessionVideoUri { get; set; }
+        public string SessionThumbnailUri { get; set; }
+        public string IsActualSession { get; set; }
+        public int IsNextSession { get; set; }
 
-        int DownloadItemId { get; set; }
-        string Caption { get; set; } 
-        string Description { get; set; }
-        string Url { get; set; } 
+        public int DownloadItemId { get; set; }
+        public string Caption { get; set; }
+        public string Description { get; set; }
+        public string Url { get; set; } 
     }
 
 }

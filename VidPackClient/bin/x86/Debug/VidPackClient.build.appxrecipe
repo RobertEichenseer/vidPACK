@@ -103,6 +103,15 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.Media.AdaptiveStreamingClient\1.0\Redist\CommonConfiguration\x86\Microsoft.Media.AdaptiveStreaming.dll">
       <PackagePath>Microsoft.Media.AdaptiveStreaming.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\Azure_MobileServiceCreation.txt">
+      <PackagePath>Assets\Azure_MobileServiceCreation.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\VidPack_DBCreation.txt">
+      <PackagePath>Assets\VidPack_DBCreation.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Common\ReadMe.txt">
+      <PackagePath>Common\ReadMe.txt</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\SessionPlaceholder.jpg">
       <PackagePath>Assets\SessionPlaceholder.jpg</PackagePath>
     </AppxPackagedFile>
@@ -135,12 +144,6 @@
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\VidPack_DBCreation.txt">
-      <PackagePath>Assets\VidPack_DBCreation.txt</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Common\ReadMe.txt">
-      <PackagePath>Common\ReadMe.txt</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\App.xaml">
       <PackagePath>App.xaml</PackagePath>
