@@ -1,0 +1,46 @@
+﻿-- V_ExistingSession_DownloadItem --
+-- Read --
+
+
+-- If Query Parameters should be used --
+function read(query, user, request) {
+	
+    var sql = "SELECT ES.Id as ExistingSessionId, ES.SessionTitle, ES.SessionSubTitle, ES.SessionDate, ES.Speaker, ES.SessionDescription, ES.SessionVideoUri, ES.SessionThumbnailUri, ES.IsActualSession, ES.IsNextSession, DI.Id as DownloadItemId, DI.Caption, DI.Description, DI.Url FROM VidPackStaging.ExistingSession AS ES INNER JOIN VidPackStaging.DownloadItem AS DI ON ES.Id = DI.ExistingSession_Id";
+    
+    mssql.query(sql, [request.parameters.Id],  {
+    success: function(results) {
+           request.respond(statusCodes.OK, results); 
+        }
+    });
+}
+
+function read(query, user, request) {
+	
+    var sql = "SELECT ES.Id as ExistingSessionId, ES.SessionTitle, ES.SessionSubTitle, ES.SessionDate, ES.Speaker, ES.SessionDescription, ES.SessionVideoUri, ES.SessionThumbnailUri, ES.IsActualSession, ES.IsNextSession, DI.Id as DownloadItemId, DI.Caption, DI.Description, DI.Url FROM VidPackStaging.ExistingSession AS ES INNER JOIN VidPackStaging.DownloadItem AS DI ON ES.Id = DI.ExistingSession_Id";
+    
+    mssql.query(sql, {
+    success: function(results) {
+           request.respond(statusCodes.OK, results); 
+        }
+    });
+}
+
+-- API
+exports.post = function(request, response) {
+    // Use "request.service" to access features of your mobile service, e.g.:
+    //   var tables = request.service.tables;
+    //   var push = request.service.push;
+
+    response.send(statusCodes.OK, { message : 'Hello World!' });
+};
+
+exports.get = function(request, response) {
+    
+    var sql = "SELECT ES.Id as ExistingSessionId, ES.SessionTitle, ES.SessionSubTitle, ES.SessionDate, ES.Speaker, ES.SessionDescription, ES.SessionVideoUri, ES.SessionThumbnailUri, ES.IsActualSession, ES.IsNextSession, DI.Id as DownloadItemId, DI.Caption, DI.Description, DI.Url FROM VidPackStaging.ExistingSession AS ES INNER JOIN VidPackStaging.DownloadItem AS DI ON ES.Id = DI.ExistingSession_Id";
+    
+    request.service.mssql.query(sql, {
+    success: function(results) {
+           request.respond(statusCodes.OK, results); 
+        }
+    });
+};
