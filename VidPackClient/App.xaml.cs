@@ -38,8 +38,8 @@ namespace VidPackClient
         public static string _ChannelUri = ""; 
 
         //Define BL
-        //public static ICommonBl _Bl = new CommonBl_RestWebService();
-        public static ICommonBl _Bl = new CommonBl_MobileServices(); 
+        public static ICommonBl _Bl = new CommonBl_RestWebService();
+        //public static ICommonBl _Bl = new CommonBl_MobileServices(); 
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
