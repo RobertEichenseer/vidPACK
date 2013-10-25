@@ -123,7 +123,7 @@ namespace VidPackClient
 
         private async void RegisterWithNotificationHub()
         {
-            _NotificationHub = new NotificationHub("vidpack", "Endpoint=sb://vidpack-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=p2N5fXEtJUJWohAgTWRUahBFYJWkSswH1GMogxpNP2Y=");
+            _NotificationHub = new NotificationHub("vidpack", "Endpoint=sb://vidpack-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=<<InsertSharedAccessKeyHere>>");
             var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
             _ChannelUri = channel.Uri; 
 

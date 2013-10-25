@@ -118,7 +118,7 @@ namespace VidPackClient.ViewModel
             string mobileApplicationKey = applicationDataContainer.Values["mobileApplicationKey"] as string;
             if (String.IsNullOrEmpty(mobileApplicationKey))
             {
-                mobileApplicationKey = "FnIlICvSGhjXlggDLhtCPiGpNYDoti15";
+                mobileApplicationKey = "<<Insert App Key here!>>";
                 applicationDataContainer.Values["mobileApplicationKey"] = mobileApplicationKey; 
             }
 
