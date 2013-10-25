@@ -812,9 +812,19 @@
             Identifies the SelectedContent dependency property.
             </summary>
         </member>
+        <member name="F:Microsoft.PlayerFramework.MediaPlayerButton.SelectedContentTemplateProperty">
+            <summary>
+            Identifies the SelectedContentTemplate dependency property.
+            </summary>
+        </member>
         <member name="F:Microsoft.PlayerFramework.MediaPlayerButton.UnselectedContentProperty">
             <summary>
             Identifies the UnselectedContent dependency property.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.MediaPlayerButton.UnselectedContentTemplateProperty">
+            <summary>
+            Identifies the UnselectedContentTemplate dependency property.
             </summary>
         </member>
         <member name="F:Microsoft.PlayerFramework.MediaPlayerButton.SelectedNameProperty">
@@ -873,9 +883,19 @@
             Gets or sets the content of the button when in a selected state (IsSelected=true).
             </summary>
         </member>
+        <member name="P:Microsoft.PlayerFramework.MediaPlayerButton.SelectedContentTemplate">
+            <summary>
+            Gets or sets the ContentTemplate of the button when in a selected state (IsSelected=true).
+            </summary>
+        </member>
         <member name="P:Microsoft.PlayerFramework.MediaPlayerButton.UnselectedContent">
             <summary>
             Gets or sets the content of the button when in an unselected state (IsSelected=false).
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.MediaPlayerButton.UnselectedContentTemplate">
+            <summary>
+            Gets or sets the ContentTemplate of the button when in an unselected state (IsSelected=false).
             </summary>
         </member>
         <member name="P:Microsoft.PlayerFramework.MediaPlayerButton.SelectedName">
@@ -1533,6 +1553,39 @@
             Gets if a previous track currently exists in the playlist.
             </summary>
         </member>
+        <member name="T:Microsoft.PlayerFramework.MediaPackHelper">
+            <summary>
+            Represents a class that can be used to detect if the Media Feature Pack is required for Windows 8 N/KN users.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.MediaPackHelper.#cctor">
+            <summary>
+            Creates a new instance of MediaPackHelper.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.MediaPackHelper.IsMediaPackRequired">
+            <summary>
+            Determines if the Media Feature Pack is required.
+            </summary>
+            <returns>A boolean indicating if it is required.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.MediaPackHelper.TestForMediaPack">
+            <summary>
+            Performs a test and prompts the user about installing the Media Feature Pack if it is required.
+            </summary>
+            <returns>An awaitable task that returns true if the media feature pack is installed, false if not.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.MediaPackHelper.PromptForMediaPack">
+            <summary>
+            Prompts the user to install the Media Feature Pack.
+            </summary>
+            <returns>An awaitable task that returns when the prompt has completed.</returns>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.MediaPackHelper.MediaPackUri">
+            <summary>
+            Gets or sets the download url for the media feature pack.
+            </summary>
+        </member>
         <member name="T:Microsoft.PlayerFramework.AdvertisingState">
             <summary>
             Provides state related to advertising
@@ -1988,6 +2041,12 @@
             Gets or sets extra data associated with a tracking event.
             </summary>
         </member>
+        <member name="P:Microsoft.PlayerFramework.TrackingEventBase.Area">
+            <summary>
+            Gets or sets a string used to identify which component is in need of this event. 
+            This can allow multiple components to register events to track and only care about the ones they created.
+            </summary>
+        </member>
         <member name="P:Microsoft.PlayerFramework.PlayTimeTrackingEvent.PlayTime">
             <summary>
             Gets or sets the absolute amount of time that the media has been played before the tracking event will fire.
@@ -2235,7 +2294,17 @@
         </member>
         <member name="P:Microsoft.PlayerFramework.MediaLoadingEventArgs.Source">
             <summary>
-            Gets or sets the source (either Uri or IRandomAccessStream) of the loading operation.
+            Gets or sets the source Uri of the loading operation. This may be null if the source is a stream.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.MediaLoadingEventArgs.SourceStream">
+            <summary>
+            Gets or sets the source stream of the loading operation. This may be null if the source is a Uri.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.MediaLoadingEventArgs.MimeType">
+            <summary>
+            Gets or sets the mime type of the loading operation. This is unused if the source is a Uri.
             </summary>
         </member>
         <member name="T:Microsoft.PlayerFramework.MediaPlayerDeferrableOperation">
@@ -2362,6 +2431,7 @@
             Seek to a specific position.
             </summary>
             <param name="position">The position to seek to.</param>
+            <param name="canceled">Allows the consumer to indicate the seek should be canceled.</param>
         </member>
         <member name="M:Microsoft.PlayerFramework.IInteractiveViewModel.PlayResume">
             <summary>
@@ -2778,6 +2848,7 @@
             Allows the subclass to learn when a seek occurred.
             </summary>
             <param name="position">The position seeked to.</param>
+            <param name="canceled">Allows the consumer to indicate the seek should be canceled.</param>
         </member>
         <member name="M:Microsoft.PlayerFramework.InteractiveViewModelBase.CompleteScrub(System.TimeSpan,System.Boolean@)">
             <inheritdoc /> 
@@ -3411,11 +3482,6 @@
             Gets a collection of available captions.
             </summary>
         </member>
-        <member name="P:Microsoft.PlayerFramework.IMediaSource.Player">
-            <summary>
-            Gets the media player associated with this MediaSource
-            </summary>
-        </member>
         <member name="M:Microsoft.PlayerFramework.MediaPlayer.#ctor">
             <summary>
             Instantiates a new instance of the MediaPlayer class.
@@ -3984,6 +4050,11 @@
         <member name="F:Microsoft.PlayerFramework.MediaPlayer.IsLiveProperty">
             <summary>
             Identifies the IsLive dependency property.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.MediaPlayer.TestForMediaPackProperty">
+            <summary>
+            Identifies the AspectRatioWidth dependency property.
             </summary>
         </member>
         <member name="F:Microsoft.PlayerFramework.MediaPlayer.AspectRatioWidthProperty">
@@ -5124,9 +5195,6 @@
             Gets or sets if the interactive SignalStrength feature should be visible and therefore available for the user to control.
             </summary>
         </member>
-        <member name="P:Microsoft.PlayerFramework.MediaPlayer.Microsoft#PlayerFramework#IMediaSource#Player">
-            <inheritdoc /> 
-        </member>
         <member name="P:Microsoft.PlayerFramework.MediaPlayer.TimeFormatConverter">
             <summary>
             Gets or sets a an IValueConverter that is used to display the time to the user such as the position, duration, and time remaining.
@@ -5310,6 +5378,11 @@
         <member name="P:Microsoft.PlayerFramework.MediaPlayer.IsLive">
             <summary>
             Gets or sets a value indicating whether the media is Live (vs. VOD).
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.MediaPlayer.TestForMediaPack">
+            <summary>
+            Gets or sets whether a test for the media feature pack should be performed prior to allowing content to be laoded. This is useful to enable if Windows 8 N/KN users will be using this app.
             </summary>
         </member>
         <member name="P:Microsoft.PlayerFramework.MediaPlayer.MediaExtensionManager">
@@ -6435,6 +6508,16 @@
             Identifies the Source dependency property.
             </summary>
         </member>
+        <member name="F:Microsoft.PlayerFramework.PlaylistItem.SourceStreamProperty">
+            <summary>
+            Identifies the SourceStream dependency property.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.PlaylistItem.MimeTypeProperty">
+            <summary>
+            Identifies the MimeType dependency property.
+            </summary>
+        </member>
         <member name="F:Microsoft.PlayerFramework.PlaylistItem.AvailableAudioStreamsProperty">
             <summary>
             Identifies the AudioStreamNames dependency property.
@@ -6483,6 +6566,16 @@
         <member name="P:Microsoft.PlayerFramework.PlaylistItem.SourceUri">
             <inheritdoc /> 
         </member>
+        <member name="P:Microsoft.PlayerFramework.PlaylistItem.SourceStream">
+            <summary>
+            Gets or sets the source stream for the playlistitem
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.PlaylistItem.MimeType">
+            <summary>
+            Gets or sets the mime type for the playlistitem. Only applicable when SourceStream is set.
+            </summary>
+        </member>
         <member name="P:Microsoft.PlayerFramework.PlaylistItem.AvailableAudioStreams">
             <summary>
             Gets or sets the list of audio stream names.
@@ -6505,9 +6598,6 @@
             </summary>
         </member>
         <member name="P:Microsoft.PlayerFramework.PlaylistItem.Microsoft#PlayerFramework#IMediaSource#AvailableCaptions">
-            <inheritdoc /> 
-        </member>
-        <member name="P:Microsoft.PlayerFramework.PlaylistItem.Player">
             <inheritdoc /> 
         </member>
         <member name="T:Microsoft.PlayerFramework.PlaylistPlugin">

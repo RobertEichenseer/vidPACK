@@ -19,6 +19,16 @@
             Creates a new instance of AdHandlerBase
             </summary>
         </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.WireController">
+            <summary>
+            Wires up the AdHandlerController events
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.UnwireController">
+            <summary>
+            Unwires the AdHandlerController events
+            </summary>
+        </member>
         <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.CancelActiveAds">
             <summary>
             Cancels all active ads.
@@ -114,6 +124,11 @@
         <member name="P:Microsoft.PlayerFramework.Advertising.AdHandlerBase.ActiveAdPlayer">
             <summary>
             Gets the current active VPAID ad player. This is null until an ad is actually playing.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHandlerBase.CompanionHostStyle">
+            <summary>
+            Gets or sets the Xaml Style to be used on the CompanionHost HyperlinkButton control used to show companion ads.
             </summary>
         </member>
         <member name="E:Microsoft.PlayerFramework.Advertising.AdHandlerBase.ActiveAdPlayerChanged">
@@ -327,7 +342,7 @@
             Identifies the EvaluateOnForwardOnly dependency property.
             </summary>
         </member>
-        <member name="F:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.SyncToAdPositionProperty">
+        <member name="F:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.SeekToAdPositionProperty">
             <summary>
             Identifies the SyncToAdPosition dependency property.
             </summary>

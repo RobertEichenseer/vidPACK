@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling.SqlAzure;
+using Microsoft.Practices.TransientFaultHandling;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -22,10 +24,20 @@ namespace VidPackBackEnd.api
         // GET api/nextsession
         public Session Get()
         {
+            var retryStrategy = new Incremental(5, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
+            var retryPolicy = new RetryPolicy<SqlAzureTransientErrorDetectionStrategy>(retryStrategy);
+            
             Session nextSession = new Session();
             using (VidPackEntities db = new VidPackEntities())
             {
-                ExistingSession dbSession = db.ExistingSession.Where(item => item.IsNextSession == 1).FirstOrDefault();
+                retryPolicy.ExecuteAction(() =>
+                {
+                    db.Database.Connection.Open();
+                });
+
+                ExistingSession dbSession = retryPolicy.ExecuteAction<ExistingSession>(() =>
+                    db.ExistingSession.Where(item => item.IsNextSession == 1).FirstOrDefault()
+                );
 
                 if (dbSession != null)
                     nextSession = new VidPackModel.Session()

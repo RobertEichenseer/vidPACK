@@ -1,13 +1,8 @@
-C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Adaptive\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.AdaptiveStreaming\Microsoft.AdaptiveStreaming.pri
-C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Adaptive\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework.Adaptive\Microsoft.PlayerFramework.Adaptive.pri
-C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Advertising\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework.Advertising\Microsoft.PlayerFramework.Advertising.pri
-C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Advertising\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.VideoAdvertising\Microsoft.VideoAdvertising.pri
-C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.AdaptiveStreaming.Analytics\Microsoft.AdaptiveStreaming.Analytics.pri
-C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework.Analytics\Microsoft.PlayerFramework.Analytics.pri
-C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.VideoAnalytics\Microsoft.VideoAnalytics.pri
-C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.TimedText\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework.TimedText\Microsoft.PlayerFramework.TimedText.pri
-C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.TimedText\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.TimedText\Microsoft.TimedText.pri
-C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Microsoft.PlayerFramework.pri
+C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Adaptive\1.8.2.1\Redist\CommonConfiguration\neutral\Microsoft.AdaptiveStreaming\Microsoft.AdaptiveStreaming.pri
+C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Adaptive\1.8.2.1\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework.Adaptive\Microsoft.PlayerFramework.Adaptive.pri
+C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Advertising\1.8.2.1\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework.Advertising\Microsoft.PlayerFramework.Advertising.pri
+C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Advertising\1.8.2.1\Redist\CommonConfiguration\neutral\Microsoft.VideoAdvertising\Microsoft.VideoAdvertising.pri
+C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\1.8.2.1\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Microsoft.PlayerFramework.pri
 C:\Sourcen\VidPack\packages\Callisto.1.3.1\lib\winrt45\Callisto.pri
 C:\Sourcen\VidPack\packages\WindowsAzure.Messaging.Managed.0.1.6.0\lib\netcore45\Microsoft.WindowsAzure.Messaging.Managed.pri
 C:\Sourcen\VidPack\packages\WindowsAzure.MobileServices.1.0.2\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.pri

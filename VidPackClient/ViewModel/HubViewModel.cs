@@ -8,6 +8,7 @@ using VidPackClient.Bl;
 using VidPackClient.Common;
 using VidPackModel;
 using Windows.Storage;
+using Windows.UI.Popups;
 
 namespace VidPackClient.ViewModel
 {
@@ -71,20 +72,28 @@ namespace VidPackClient.ViewModel
         //Event Handling
         internal async void LoadHubContent()
         {
-            
-            ActualSession = await _bl.LoadActualSession();
-            NextSession = await _bl.LoadNextSession();
-            Sessions = new ObservableCollection<Session>(await _bl.LoadPastSession());
-
-            //Async load of Speaker Images;
-            Sessions = await Task.Run<ObservableCollection<Session>>(() =>
+            ErrorHandler.RethrowError = true;
+            try
             {
-                //Todo: Integration of error handling
-                foreach (Session session in Sessions)
-                    session.SessionThumbnailDisplayUrl = session.SessionThumbnailUrl;
+                ActualSession = await _bl.LoadActualSession();
+                NextSession = await _bl.LoadNextSession();
+                Sessions = new ObservableCollection<Session>(await _bl.LoadPastSession());
 
-                return Sessions;
-            }); 
+                //Async load of Speaker Images;
+                Sessions = await Task.Run<ObservableCollection<Session>>(() =>
+                {
+                    //Todo: Integration of error handling
+                    foreach (Session session in Sessions)
+                        session.SessionThumbnailDisplayUrl = session.SessionThumbnailUrl;
+
+                    return Sessions;
+                });
+            }
+            catch (Exception exception)
+            {
+                ErrorHandler.ShowLastError("Bitte prüfen Sie die Verbindung zum Backend!"); 
+            }
+
         }
 
         private void ReadConfigParameter()
@@ -103,16 +112,18 @@ namespace VidPackClient.ViewModel
             if (String.IsNullOrEmpty(mobileServiceUrl))
             {
                 mobileServiceUrl = "https://vidpackstaging.azure-mobile.net/";
+                applicationDataContainer.Values["mobileServiceUrl"] = mobileServiceUrl; 
             }
 
             string mobileApplicationKey = applicationDataContainer.Values["mobileApplicationKey"] as string;
             if (String.IsNullOrEmpty(mobileApplicationKey))
             {
                 mobileApplicationKey = "FnIlICvSGhjXlggDLhtCPiGpNYDoti15";
+                applicationDataContainer.Values["mobileApplicationKey"] = mobileApplicationKey; 
             }
 
             //Debug Settings
-            webServiceUrl = "http://localhost:19513/api/";
+            webServiceUrl = "http://vidpackstaging.azurewebsites.net/api/";
             //mobileServiceUrl = "https://vidpackstaging.azure-mobile.net/";
             //mobileApplicationKey = "FnIlICvSGhjXlggDLhtCPiGpNYDoti15"; 
 

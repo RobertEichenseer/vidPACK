@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>ROBEICHNB</Machine>
+    <Machine>DE-ROBEICH01</Machine>
     <WindowsUser>robeich</WindowsUser>
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
-    <RegisteredManifestChecksum>42D1028AD5FC8429A601173EE5135C45707AF450F69738897E422DA25FE5E75C</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>9EB7C5F35415705F24BF2EC56D017B5BC520BE77D866628517174E3465E6F038</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>4195RobertEichenseer.RobEichVidPack_1.0.0.0_x86__f9yzzwaf9xyde</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>4195RobertEichenseer.RobEichVidPack_f9yzzwaf9xyde!App</RegisteredUserModeAppID>
     <RegisteredPackageID>4195RobertEichenseer.RobEichVidPack</RegisteredPackageID>
@@ -16,65 +16,37 @@
     <AppXManifest Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-10-06T08:09:53.641</Modified>
+      <Modified>2013-10-25T11:38:38.615</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.exe">
       <PackagePath>VidPackClient.exe</PackagePath>
-      <Modified>2013-10-09T09:31:09.019</Modified>
+      <Modified>2013-10-25T13:53:02.444</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\VidPackClient.pdb">
       <PackagePath>VidPackClient.pdb</PackagePath>
-      <Modified>2013-10-09T09:31:08.983</Modified>
+      <Modified>2013-10-25T13:53:02.415</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\References\CommonConfiguration\x86\Microsoft.AdaptiveStreaming.Analytics.winmd">
-      <PackagePath>Microsoft.AdaptiveStreaming.Analytics.winmd</PackagePath>
-      <Modified>2013-03-31T08:21:10.920</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Adaptive\1.8.0.5\References\CommonConfiguration\x86\Microsoft.AdaptiveStreaming.winmd">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Adaptive\1.8.2.1\References\CommonConfiguration\x86\Microsoft.AdaptiveStreaming.winmd">
       <PackagePath>Microsoft.AdaptiveStreaming.winmd</PackagePath>
-      <Modified>2013-03-31T08:21:10.673</Modified>
+      <Modified>2013-10-17T15:44:12.885</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.Media.AdaptiveStreamingClient\1.0\References\CommonConfiguration\neutral\Microsoft.Media.AdaptiveStreaming.winmd">
-      <PackagePath>Microsoft.Media.AdaptiveStreaming.winmd</PackagePath>
-      <Modified>2013-04-10T15:00:59.029</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Advertising\1.8.0.5\References\CommonConfiguration\neutral\Microsoft.VideoAdvertising.winmd">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Advertising\1.8.2.1\References\CommonConfiguration\neutral\Microsoft.VideoAdvertising.winmd">
       <PackagePath>Microsoft.VideoAdvertising.winmd</PackagePath>
-      <Modified>2013-03-31T08:21:10.827</Modified>
+      <Modified>2013-10-17T15:44:13.041</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\References\CommonConfiguration\neutral\Microsoft.VideoAnalytics.winmd">
-      <PackagePath>Microsoft.VideoAnalytics.winmd</PackagePath>
-      <Modified>2013-03-31T08:21:10.884</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Adaptive\1.8.0.5\References\CommonConfiguration\x86\Microsoft.PlayerFramework.Adaptive.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Adaptive\1.8.2.1\References\CommonConfiguration\x86\Microsoft.PlayerFramework.Adaptive.dll">
       <PackagePath>Microsoft.PlayerFramework.Adaptive.dll</PackagePath>
-      <Modified>2013-03-31T08:21:10.689</Modified>
+      <Modified>2013-10-17T15:44:12.895</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Advertising\1.8.0.5\References\CommonConfiguration\neutral\Microsoft.PlayerFramework.Advertising.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Advertising\1.8.2.1\References\CommonConfiguration\neutral\Microsoft.PlayerFramework.Advertising.dll">
       <PackagePath>Microsoft.PlayerFramework.Advertising.dll</PackagePath>
-      <Modified>2013-03-31T08:21:10.793</Modified>
+      <Modified>2013-10-17T15:44:13.017</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\References\CommonConfiguration\neutral\Microsoft.PlayerFramework.Analytics.dll">
-      <PackagePath>Microsoft.PlayerFramework.Analytics.dll</PackagePath>
-      <Modified>2013-03-31T08:21:10.863</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\1.8.0.5\References\CommonConfiguration\neutral\Microsoft.PlayerFramework.dll">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\1.8.2.1\References\CommonConfiguration\neutral\Microsoft.PlayerFramework.dll">
       <PackagePath>Microsoft.PlayerFramework.dll</PackagePath>
-      <Modified>2013-03-31T08:21:10.977</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.TimedText\1.8.0.5\References\CommonConfiguration\neutral\Microsoft.PlayerFramework.TimedText.dll">
-      <PackagePath>Microsoft.PlayerFramework.TimedText.dll</PackagePath>
-      <Modified>2013-03-31T08:21:10.719</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.TimedText\1.8.0.5\References\CommonConfiguration\neutral\Microsoft.TimedText.dll">
-      <PackagePath>Microsoft.TimedText.dll</PackagePath>
-      <Modified>2013-03-31T08:21:10.744</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Analytics\1.8.0.5\References\CommonConfiguration\neutral\ZLib.dll">
-      <PackagePath>ZLib.dll</PackagePath>
-      <Modified>2013-03-31T08:21:10.898</Modified>
+      <Modified>2013-10-17T15:44:13.176</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\packages\Callisto.1.3.1\lib\winrt45\Callisto.dll">
       <PackagePath>Callisto.dll</PackagePath>
@@ -114,31 +86,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackModel\bin\Debug\VidPackModel.dll">
       <PackagePath>VidPackModel.dll</PackagePath>
-      <Modified>2013-10-05T15:29:55.615</Modified>
+      <Modified>2013-10-18T05:45:43.873</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackModel\bin\Debug\VidPackModel.pdb">
       <PackagePath>VidPackModel.pdb</PackagePath>
-      <Modified>2013-10-05T15:29:55.589</Modified>
+      <Modified>2013-10-18T05:45:43.837</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\EntertainmentTheme.xaml">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\1.8.2.1\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\EntertainmentTheme.xaml">
       <PackagePath>Microsoft.PlayerFramework\Themes\EntertainmentTheme.xaml</PackagePath>
-      <Modified>2013-03-31T08:21:10.937</Modified>
+      <Modified>2013-10-17T15:44:13.142</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Advertising\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework.Advertising\themes\Generic.xaml">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.Advertising\1.8.2.1\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework.Advertising\themes\Generic.xaml">
       <PackagePath>Microsoft.PlayerFramework.Advertising\themes\Generic.xaml</PackagePath>
-      <Modified>2013-03-31T08:21:10.762</Modified>
+      <Modified>2013-10-17T15:44:12.998</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml.TimedText\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.TimedText\themes\Generic.xaml">
-      <PackagePath>Microsoft.TimedText\themes\Generic.xaml</PackagePath>
-      <Modified>2013-03-31T08:21:10.707</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\1.8.0.5\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\generic.xaml">
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\1.8.2.1\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\generic.xaml">
       <PackagePath>Microsoft.PlayerFramework\Themes\generic.xaml</PackagePath>
-      <Modified>2013-03-31T08:21:10.943</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.Media.AdaptiveStreamingClient\1.0\Redist\CommonConfiguration\x86\Microsoft.Media.AdaptiveStreaming.dll">
-      <PackagePath>Microsoft.Media.AdaptiveStreaming.dll</PackagePath>
-      <Modified>2013-04-10T15:00:59.024</Modified>
+      <Modified>2013-10-17T15:44:13.148</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\Assets\Azure_MobileServiceCreation.txt">
       <PackagePath>Assets\Azure_MobileServiceCreation.txt</PackagePath>
@@ -204,7 +168,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\Hub.xaml">
       <PackagePath>View\Hub.xaml</PackagePath>
-      <Modified>2013-09-28T09:12:57.386</Modified>
+      <Modified>2013-10-25T10:55:05.652</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\View\Notification.xaml">
       <PackagePath>View\Notification.xaml</PackagePath>
@@ -228,31 +192,10 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Sourcen\VidPack\VidPackClient\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-10-06T08:09:45.044</Modified>
+      <Modified>2013-10-17T15:45:05.298</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.Media.PlayReadyClient\2.3.1678.0\">
-      <Name>Microsoft.Media.PlayReadyClient</Name>
-      <Version>2.3.1678.0</Version>
-      <Architecture>ARM</Architecture>
-      <FrameworkIdentity>Name=Microsoft.Media.PlayReadyClient, MinVersion=2.3.1678.0</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.Media.PlayReadyClient\2.3.1678.0\.\AppX\Retail\arm\Microsoft.Media.PlayReadyClient.arm.2.3.1678.0.appx</AppxLocation>
-    </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.Media.PlayReadyClient\2.3.1678.0\">
-      <Name>Microsoft.Media.PlayReadyClient</Name>
-      <Version>2.3.1678.0</Version>
-      <Architecture>x64</Architecture>
-      <FrameworkIdentity>Name=Microsoft.Media.PlayReadyClient, MinVersion=2.3.1678.0</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.Media.PlayReadyClient\2.3.1678.0\.\AppX\Retail\x64\Microsoft.Media.PlayReadyClient.x64.2.3.1678.0.appx</AppxLocation>
-    </ResolvedSDKReference>
-    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.Media.PlayReadyClient\2.3.1678.0\">
-      <Name>Microsoft.Media.PlayReadyClient</Name>
-      <Version>2.3.1678.0</Version>
-      <Architecture>x86</Architecture>
-      <FrameworkIdentity>Name=Microsoft.Media.PlayReadyClient, MinVersion=2.3.1678.0</FrameworkIdentity>
-      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.Media.PlayReadyClient\2.3.1678.0\.\AppX\Retail\x86\Microsoft.Media.PlayReadyClient.x86.2.3.1678.0.appx</AppxLocation>
-    </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.VCLibs\11.0\">
       <Name>Microsoft.VCLibs.110.00.Debug</Name>
       <Version>11.0.51106.1</Version>

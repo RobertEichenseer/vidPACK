@@ -1,9 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="VidPackModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="VidPackModelStoreContainer">
+    <EntitySet Name="DownloadItem" EntityType="VidPackModel.Store.DownloadItem" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ExistingSession" EntityType="VidPackModel.Store.ExistingSession" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Notification" EntityType="VidPackModel.Store.Notification" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_DownloadItem_ExistingSession" Association="VidPackModel.Store.FK_DownloadItem_ExistingSession">
+      <End Role="ExistingSession" EntitySet="ExistingSession" />
+      <End Role="DownloadItem" EntitySet="DownloadItem" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="DownloadItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ExistingSession_Id" Type="int" Nullable="false" />
+    <Property Name="Caption" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" Nullable="false" MaxLength="255" />
+  </EntityType>
   <EntityType Name="ExistingSession">
     <Key>
       <PropertyRef Name="Id" />
@@ -26,4 +41,16 @@
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="NotificationTag" Type="nvarchar" Nullable="false" MaxLength="50" />
   </EntityType>
+  <Association Name="FK_DownloadItem_ExistingSession">
+    <End Role="ExistingSession" Type="VidPackModel.Store.ExistingSession" Multiplicity="1" />
+    <End Role="DownloadItem" Type="VidPackModel.Store.DownloadItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExistingSession">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DownloadItem">
+        <PropertyRef Name="ExistingSession_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

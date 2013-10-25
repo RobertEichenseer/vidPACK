@@ -8,6 +8,7 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using VidPackClient.Bl;
+using VidPackClient.Common;
 using VidPackModel;
 using Windows.UI.Xaml.Media.Imaging;
 
@@ -27,13 +28,20 @@ namespace VidPackClient.Bl
         public async Task<Session> LoadActualSession()
         {
             string serviceEndpoint = "actualsession";
-            Session returnValue = new Session(); 
+            Session returnValue = new Session();
 
-            using (HttpClient httpClient = new HttpClient())
+            try
             {
-                Uri uri = new Uri(string.Format("{0}{1}", _webServiceUri, serviceEndpoint));
-                JObject jsonResult = JObject.Parse(await httpClient.GetStringAsync(uri));
-                returnValue = jsonResult.ToObject<Session>();
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    Uri uri = new Uri(string.Format("{0}{1}", _webServiceUri, serviceEndpoint));
+                    JObject jsonResult = JObject.Parse(await httpClient.GetStringAsync(uri));
+                    returnValue = jsonResult.ToObject<Session>();
+                }
+            }
+            catch (HttpRequestException exception)
+            {
+                ErrorHandler.AddError(exception);
             }
 
             return returnValue;
@@ -45,11 +53,18 @@ namespace VidPackClient.Bl
             string serviceEndpoint = "nextsession";
             Session returnValue = new Session();
 
-            using (HttpClient httpClient = new HttpClient())
+            try
             {
-                Uri uri = new Uri(string.Format("{0}{1}", _webServiceUri, serviceEndpoint));
-                JObject jsonResult = JObject.Parse(await httpClient.GetStringAsync(uri));
-                returnValue = jsonResult.ToObject<Session>();
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    Uri uri = new Uri(string.Format("{0}{1}", _webServiceUri, serviceEndpoint));
+                    JObject jsonResult = JObject.Parse(await httpClient.GetStringAsync(uri));
+                    returnValue = jsonResult.ToObject<Session>();
+                }
+            }
+            catch (HttpRequestException exception)
+            {
+                ErrorHandler.AddError(exception);
             }
 
             return returnValue;
@@ -61,11 +76,17 @@ namespace VidPackClient.Bl
             string serviceEndpoint = "session";
             List<Session> returnValue = new List<Session>();
 
-            using (HttpClient httpClient = new HttpClient())
+            try { 
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    Uri uri = new Uri(string.Format("{0}{1}", _webServiceUri, serviceEndpoint));
+                    string jsonResult = await httpClient.GetStringAsync(uri);
+                    returnValue =  Deserialize<List<Session>>(jsonResult);
+                }
+            }
+            catch (HttpRequestException exception)
             {
-                Uri uri = new Uri(string.Format("{0}{1}", _webServiceUri, serviceEndpoint));
-                string jsonResult = await httpClient.GetStringAsync(uri);
-                returnValue =  Deserialize<List<Session>>(jsonResult);
+                ErrorHandler.AddError(exception);
             }
 
             return returnValue;
@@ -76,11 +97,18 @@ namespace VidPackClient.Bl
             string serviceEndpoint = "notification";
             List<NotificationInfo> returnValue = new List<NotificationInfo>();
 
-            using (HttpClient httpClient = new HttpClient())
+            try
             {
-                Uri uri = new Uri(string.Format("{0}{1}", _webServiceUri, serviceEndpoint));
-                string jsonResult = await httpClient.GetStringAsync(uri);
-                returnValue = Deserialize<List<NotificationInfo>>(jsonResult);
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    Uri uri = new Uri(string.Format("{0}{1}", _webServiceUri, serviceEndpoint));
+                    string jsonResult = await httpClient.GetStringAsync(uri);
+                    returnValue = Deserialize<List<NotificationInfo>>(jsonResult);
+                }
+            }
+            catch (HttpRequestException exception)
+            {
+                ErrorHandler.AddError(exception);
             }
 
             return returnValue;

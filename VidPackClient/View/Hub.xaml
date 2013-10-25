@@ -165,7 +165,7 @@
                         <ScrollViewer VerticalScrollBarVisibility="Auto">
                             <StackPanel Orientation="Vertical">
                                 <TextBlock Text="Past Sessions" Style="{StaticResource GroupHeaderTextStyle}" Margin="10" />
-                                <GridView ItemsSource="{Binding Path=Sessions}" ItemTemplate="{StaticResource DataTemplateSession}" SelectionChanged="PastSession_SelectionChanged" />
+                                <GridView ItemsSource="{Binding Path=Sessions}" ItemTemplate="{StaticResource DataTemplateSession}" SelectionChanged="PastSession_SelectionChanged"/>
                             </StackPanel>
                         </ScrollViewer>
                     </Frame>

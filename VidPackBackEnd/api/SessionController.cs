@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling.SqlAzure;
+using Microsoft.Practices.TransientFaultHandling;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -22,28 +24,40 @@ namespace VidPackBackEnd.api
         // GET api/session
         public IEnumerable<Session> Get(ODataQueryOptions<Session> queryOptions)
         {
+
+            var retryStrategy = new Incremental(5, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
+            var retryPolicy = new RetryPolicy<SqlAzureTransientErrorDetectionStrategy>(retryStrategy);
+
             List<Session> session = new List<Session>();
             try
             {
                 using (VidPackEntities db = new VidPackEntities())
                 {
-                    var listSession = db.ExistingSession.Include("DownloadItem").Select(item => new
+                    retryPolicy.ExecuteAction(() =>
                     {
-                        SessionDate = item.SessionDate,
-                        SessionDescription = item.SessionDescription,
-                        SessionSubTitle = item.SessionSubTitle,
-                        SessionThumbnailUrl = item.SessionThumbnailUri,
-                        SessionTitle = item.SessionSubTitle,
-                        SessionVideoUrl = item.SessionVideoUri == null ? "" : item.SessionVideoUri,
-                        Speaker = item.Speaker,
-                        isActual = item.IsActualSession,
-                        DownloadItem = item.DownloadItem.Select(_ => new
+                        db.Database.Connection.Open();
+                    });
+
+
+                    var listSession = retryPolicy.ExecuteAction(() =>
+                        db.ExistingSession.Include("DownloadItem").Select(item => new
                         {
-                            Caption = _.Caption,
-                            Description = _.Description,
-                            Url = _.Url,
-                        })
-                    }).ToList();
+                            SessionDate = item.SessionDate,
+                            SessionDescription = item.SessionDescription,
+                            SessionSubTitle = item.SessionSubTitle,
+                            SessionThumbnailUrl = item.SessionThumbnailUri,
+                            SessionTitle = item.SessionSubTitle,
+                            SessionVideoUrl = item.SessionVideoUri == null ? "" : item.SessionVideoUri,
+                            Speaker = item.Speaker,
+                            isActual = item.IsActualSession,
+                            DownloadItem = item.DownloadItem.Select(_ => new
+                            {
+                                Caption = _.Caption,
+                                Description = _.Description,
+                                Url = _.Url,
+                            })
+                        }).ToList()
+                    );
 
                     //ToString() / String.Format() is not know within projection
                     session = listSession.Select(item => new Session() {

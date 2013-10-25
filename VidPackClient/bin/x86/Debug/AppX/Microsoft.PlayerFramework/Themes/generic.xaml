@@ -1465,11 +1465,12 @@
     </Style>
 
     <Style TargetType="local:CaptionSelectorView">
+        <Setter Property="Padding" Value="0,0,0,40"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:CaptionSelectorView">
                     <Grid x:Name="LayoutRoot" Background="#00000000">
-                        <Border BorderThickness="2" BorderBrush="{StaticResource ListBoxForegroundThemeBrush}" Background="{StaticResource ListBoxFocusBackgroundThemeBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,40">
+                        <Border BorderThickness="2" BorderBrush="{StaticResource ListBoxForegroundThemeBrush}" Background="{StaticResource ListBoxFocusBackgroundThemeBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="{TemplateBinding Padding}">
                             <local:DeselectableListBox x:Name="CaptionsList" MaxWidth="200"  ItemsSource="{Binding AvailableCaptions}" SelectedItem="{Binding SelectedCaption, Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <local:DeselectableListBox.ItemTemplate>
                                     <DataTemplate>
@@ -1485,11 +1486,12 @@
     </Style>
 
     <Style TargetType="local:AudioSelectionView">
+        <Setter Property="Padding" Value="0,0,0,40"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:AudioSelectionView">
                     <Grid x:Name="LayoutRoot" Background="#00000000">
-                        <Border BorderThickness="2" BorderBrush="{StaticResource ListBoxForegroundThemeBrush}" Background="{StaticResource ListBoxFocusBackgroundThemeBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,40">
+                        <Border BorderThickness="2" BorderBrush="{StaticResource ListBoxForegroundThemeBrush}" Background="{StaticResource ListBoxFocusBackgroundThemeBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="{TemplateBinding Padding}">
                             <ListBox x:Name="AudioList" MaxWidth="200" ItemsSource="{Binding AvailableAudioStreams}" SelectedItem="{Binding SelectedAudioStream, Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>

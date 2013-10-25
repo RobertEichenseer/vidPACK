@@ -5,15 +5,15 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using VidPackBackEnd.EDMX;
-using VidPackModel; 
+using VidPackModel;
+using Microsoft.Practices.EnterpriseLibrary.WindowsAzure.TransientFaultHandling.SqlAzure;
+using Microsoft.Practices.TransientFaultHandling;
 
 
 namespace VidPackBackEnd.api
 {
     public class ActualSessionController : ApiController
     {
-
-
         private string ThumbnailStorageUrl { get; set; }
 
         public ActualSessionController()
@@ -24,10 +24,22 @@ namespace VidPackBackEnd.api
         // GET api/actualsession
         public Session Get()
         {
+
+            var retryStrategy = new Incremental(5, TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(2));
+            var retryPolicy = new RetryPolicy<SqlAzureTransientErrorDetectionStrategy>(retryStrategy);
+
             Session actualSession = new Session(); 
             using (VidPackEntities db = new VidPackEntities())
             {
-                ExistingSession dbSession = db.ExistingSession.Where(item => item.IsActualSession == 1).FirstOrDefault();
+                retryPolicy.ExecuteAction(() =>
+                {
+                    db.Database.Connection.Open();
+                });
+
+
+                ExistingSession dbSession = retryPolicy.ExecuteAction<ExistingSession>(() =>
+                    db.ExistingSession.Where(item => item.IsActualSession == 1).FirstOrDefault()
+                ); 
 
                 if (dbSession != null)
                     actualSession = new VidPackModel.Session()
